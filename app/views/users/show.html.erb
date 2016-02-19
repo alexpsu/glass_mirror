@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>First name:</strong>
   <%= @user.first_name %>
@@ -16,13 +14,14 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
   <strong>Interest:</strong>
-  <%= @user.interest %>
+  <% @user.interest.each do |interest| %>
+  <ul>
+    <li>
+      <%= interest %>
+    </li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

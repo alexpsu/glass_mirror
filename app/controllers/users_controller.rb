@@ -15,7 +15,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    set_user
+    fixed_interest = user_params[:interest]
+    params = user_params
+    params[:interest] = fixed_interest.split(" ")
+    @user = User.create(params)
     if @user.save
       login(@user)
       redirect_to @user
@@ -68,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :interest)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :interest)
     end
 end
