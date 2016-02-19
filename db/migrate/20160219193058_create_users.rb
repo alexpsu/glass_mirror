@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :password_digest
-      t.text :interest
+      t.text :interest, array:true, default: []
 
       t.timestamps null: false
     end
