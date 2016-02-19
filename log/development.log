@@ -2307,3 +2307,327 @@ Processing by SessionsController#new as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
 Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2016-02-19 15:00:00 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.2ms)
+
+SyntaxError (/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+...seperate by \,, class: "control-label" );@output_buffer.safe...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...e by \,, class: "control-label" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t_field :interest, class: "form-control accent-text" );@outp...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...st, class: "form-control accent-text" );@output_buffer.safe_...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ass: "form-control accent-text" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="form-group">
+                  ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  <div class="form-group">
+                         ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( f.submit "Submit", class: "btn btn-default fo...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+... f.submit "Submit", class: "btn btn-default form-control" );...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...", class: "btn btn-default form-control" );@output_buffer.sa...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... "btn btn-default form-control" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: unterminated string meets end of file):
+  app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: unterminated string meets end of file
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4606174035795326799_70125693619780'
+
+
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (88.7ms)
+
+
+Started GET "/signup" for ::1 at 2016-02-19 15:00:02 -0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/_form.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+...seperate by \,, class: "control-label" );@output_buffer.safe...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...e by \,, class: "control-label" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t_field :interest, class: "form-control accent-text" );@outp...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...st, class: "form-control accent-text" );@output_buffer.safe_...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ass: "form-control accent-text" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="form-group">
+                  ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  <div class="form-group">
+                         ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( f.submit "Submit", class: "btn btn-default fo...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+... f.submit "Submit", class: "btn btn-default form-control" );...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...", class: "btn btn-default form-control" );@output_buffer.sa...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... "btn btn-default form-control" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: unterminated string meets end of file):
+  app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: unterminated string meets end of file
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4606174035795326799_70125693619780'
+
+
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.5ms)
+
+
+Started GET "/signup" for ::1 at 2016-02-19 15:00:16 -0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+...seperate by \,, class: "control-label" );@output_buffer.safe...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...e by \,, class: "control-label" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t_field :interest, class: "form-control accent-text" );@outp...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...st, class: "form-control accent-text" );@output_buffer.safe_...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ass: "form-control accent-text" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="form-group">
+                  ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  <div class="form-group">
+                         ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( f.submit "Submit", class: "btn btn-default fo...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+... f.submit "Submit", class: "btn btn-default form-control" );...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...", class: "btn btn-default form-control" );@output_buffer.sa...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... "btn btn-default form-control" );@output_buffer.safe_append...
+...                               ^
+/Users/Rao/dev/glass_mirror/app/views/users/_form.html.erb:28: unterminated string meets end of file):
+  app/views/users/_form.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:24: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:27: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/users/_form.html.erb:28: unterminated string meets end of file
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4606174035795326799_70125693619780'
+
+
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-02-19 15:01:28 -0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/_form.html.erb (9.3ms)
+  Rendered users/new.html.erb within layouts/application (10.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 223ms (Views: 221.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/application.self-81af5feb5215ac8e9c3db47eb788d757f74a2f9dca7edac98dff9c753bc9540b.css?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-19 15:01:29 -0800
+
+
+Started GET "/signup" for ::1 at 2016-02-19 15:01:46 -0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/application.self-81af5feb5215ac8e9c3db47eb788d757f74a2f9dca7edac98dff9c753bc9540b.css?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-19 15:01:46 -0800
+
+
+Started GET "/login" for ::1 at 2016-02-19 15:08:21 -0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2016-02-19 15:08:24 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iq7733S3cmJorSlTolVBjSbLfRuoJK2xY85Lp4prAy5AxRNeZk1LYTXwQVK5i4rFk1LWQt6n296MMei22JN4SQ==", "user"=>{"email"=>"alexrao17@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "alexrao17@gmail.com"]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 77ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-19 15:08:24 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-02-19 15:08:26 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.4ms)
