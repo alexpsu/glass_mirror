@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'splash/index'
+
+  get 'splash/show'
+
   #Routes for CRUD for Users
   get "/users", to: "users#index", as: "users"
   get "/signup", to: "users#new", as: "new_user"
