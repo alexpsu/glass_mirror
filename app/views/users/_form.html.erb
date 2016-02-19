@@ -5,10 +5,6 @@
     <h2 class="form-group accent-text title">Signup</h2>
   <% end %>
   <div class="form-group">
-    <%= f.label :email, "email", class: "control-label" %>
-    <%= f.text_field :email, :required => true, class: "form-control accent-text" %>
-  </div>
-  <div class="form-group">
     <%= f.label :first_name, "first name", class: "control-label" %>
     <%= f.text_field :first_name, :required => true, class: "form-control accent-text" %>
   </div>
@@ -17,19 +13,18 @@
     <%= f.text_field :last_name, :required => true, class: "form-control accent-text" %>
   </div>
   <div class="form-group">
-    <%= f.label :current_city, "current city", class: "control-label" %>
-    <%= f.text_field :current_city, :required => true, class: "form-control accent-text" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :bio, "about me", class: "control-label" %>
-    <%= f.text_area :bio, :required => true, class: "form-control accent-text" %>
+    <%= f.label :email, "email", class: "control-label" %>
+    <%= f.text_field :email, :required => true, class: "form-control accent-text" %>
   </div>
   <div class="form-group">
     <%= f.label :password, "password", class: "control-label" %>
     <%= f.password_field :password, class: "form-control" %>
   </div>
-  <div class="text-center" id="defaut-photo">
-    <%= image_tag @user.avatar.url %></div>
+  <div class="form-group">
+    <%= f.label :interest, "interest", class: "control-label" %>
+    <%= f.text_field :interest, class: "form-control accent-text" %>
+  </div>
+
     <%= f.file_field :avatar, class: "text-center" %><br>
   <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-accent form-control" %>

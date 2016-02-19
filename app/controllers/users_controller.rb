@@ -16,8 +16,13 @@ class UsersController < ApplicationController
 
   def create
     set_user
-    login(@user)
-    redirect_to @user
+    if @user.save
+      login(@user)
+      redirect_to @user
+    else
+      flash[:error] = "Please check your email: invalid format or already in use."
+      redirect_to new_user_path
+    end
   end
 
   def edit

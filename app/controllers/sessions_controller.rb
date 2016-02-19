@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   before_action :logged_in?, only: [:destroy]
 	before_action :logged_out?, only: [:new, :create]
 
@@ -28,5 +27,5 @@ class SessionsController < ApplicationController
 	def user_params
 		params.require(:user).permit(:email, :password)
 	end
-  
+
 end
