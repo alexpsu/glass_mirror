@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     fixed_interest = user_params[:interest]
     params = user_params
-    params[:interest] = fixed_interest.split(" ")
+    params[:interest] = fixed_interest.split(",")
     @user = User.create(params)
     if @user.save
       login(@user)

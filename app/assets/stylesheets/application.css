@@ -10,5 +10,9 @@
  *= require_self
  */
  .form-horizontal {
-   width: 300px;
+   width: 350px;
+ }
+
+ .splash-btn {
+   display: inline-block;
  }
