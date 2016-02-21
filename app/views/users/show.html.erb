@@ -1,28 +1,32 @@
-<div class="container">
-  <div class="col-lg-6 col-lg-offset-3 text-center">
-    <div>
-     	<h1 class="title">Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
-    </div>
-    <% if @user.jobs.length == 0 %>
-      <h2>To add your first job click the button below!</h2>
-    <% else %>
-      <div class = "button text-center">
-        <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-success center-block'  %>
-      </div>
-      <% @user.jobs.each do |job| %>
-        <div class="col-md-4">
-          <h4><%= job.title %> at <%= job.company %> Last updated <%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
-        </div>
-      <% end %>
-    <% end %>
-
-    <div class="btn-group">
-      <div class = "button text-center">
-        <%= link_to "edit profile", edit_user_path(@user.id), class: 'btn btn-light center-block' %>
-      </div>
-      <div class = "button text-center">
-        <%= button_to "remove profile", @user, method: :delete, class: 'btn btn-light center-block'  %>
-      </div>
-    </div>
+<div class="btn-group">
+  <div class="splash-btn">
+    <%= button_to "edit profile", edit_user_path(@user.id), method: :get, class: 'btn btn-xs btn-light center-block' %>
   </div>
+  <div class="splash-btn">
+    <%= button_to "remove profile", @user, method: :delete, class: 'btn btn-xs btn-light center-block'  %>
+  </div>
+</div>
+<div class="container">
+  <div class="text-center">
+    <% if @user.jobs.length == 0 %>
+      <div>
+       	<h1 class="title">Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
+      </div>
+        <h3>To get started click the button below!</h3>
+    <% else %>
+      <h1 class="title">Hello <%= @user.first_name %></h1>
+    <% end %>
+  </div>
+
+  <div class="button text-center">
+    <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-success center-block'  %>
+  </div>
+
+  <div class="container job-container">
+    <% @user.jobs.each do |job| %>
+      <div class="col-lg-12 text-center">
+        <h4><%= job.title %> at <%= job.company %> Last updated <%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
+      </div>
+    <% end %>
+    </div>
 </div>

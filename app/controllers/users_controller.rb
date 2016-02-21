@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     if current_user == @user
       @user.destroy
       flash[:notice] = "Successfully deleted user #{@user.last_name}"
-      redirect_to users_path
+      redirect_to rooth_path
     else
       flash[:notice] = "You can't delete that user."
       redirect_to user_path(@user)

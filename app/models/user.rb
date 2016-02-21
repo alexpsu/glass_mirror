@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :jobs
+  has_many :jobs, :dependent => :delete_all
   has_secure_password
 
   def self.confirm(params)
