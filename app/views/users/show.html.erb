@@ -1,28 +1,28 @@
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Interest:</strong>
-  <% @user.interest.each do |interest| %>
-  <ul>
-    <li>
-      <%= interest %>
-    </li>
+<div class="container">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+    <div>
+     	<h1 class="title">Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
+    </div>
+    <% if @user.jobs.length == 0 %>
+      <h2>To add your first job click the button below!</h2>
+    <% else %>
+      <div class = "button text-center">
+        <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-success center-block'  %>
+      </div>
+      <% @user.jobs.each do |job| %>
+        <div class="col-md-4">
+          <h4><%= job.title %> at <%= job.company %> Last updated <%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="btn-group">
+      <div class = "button text-center">
+        <%= link_to "edit profile", edit_user_path(@user.id), class: 'btn btn-light center-block' %>
+      </div>
+      <div class = "button text-center">
+        <%= button_to "remove profile", @user, method: :delete, class: 'btn btn-light center-block'  %>
+      </div>
+    </div>
+  </div>
+</div>
