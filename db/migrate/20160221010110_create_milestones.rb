@@ -3,6 +3,7 @@ class CreateMilestones < ActiveRecord::Migration
     create_table :milestones do |t|
       t.string :title
       t.boolean :status
+      t.belongs_to :job
 
       t.timestamps null: false
     end
