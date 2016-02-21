@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'milestones/new'
+
+  get 'jobs/show'
+
+  get 'jobs/new'
+
   root to: 'splash#index'
   get '/about', to: 'splash#show', as: 'about'
 
