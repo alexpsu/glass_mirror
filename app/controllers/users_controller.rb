@@ -58,7 +58,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Successfully deleted user #{@user.last_name}"
       redirect_to users_path
     else
-      flash[:notice] = "You can't delete that user silly willy."
+      flash[:notice] = "You can't delete that user."
       redirect_to user_path(@user)
     end
   end

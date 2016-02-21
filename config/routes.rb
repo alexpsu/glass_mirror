@@ -18,7 +18,18 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"
 
+  #Routes CRUD jobs
+  get "/jobs/:id", to: "jobs#show", as: "job"
+  post "/users/:id/jobs", to "jobs#new", as "new_job"
+  get "/jobs/:id/edit", to: "jobs#edit", as: "edit_job"
+  patch "/jobs/:id", to: "jobs#update"
+  delete "/jobs/:id", to: "jobs#destroy"
+
+  #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"
   post "/sessions", to: "sessions#create"
   get "/logout", to: "sessions#destroy", as: "destroy_session"
+
+
+
 end
