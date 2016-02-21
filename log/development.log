@@ -11312,3 +11312,56 @@ ORDER BY c.conname
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  UPDATE "milestones" SET "job_id" = $1, "updated_at" = $2 WHERE "milestones"."id" = $3  [["job_id", 1], ["updated_at", "2016-02-21 04:46:08.986611"], ["id", 1]]
   [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2016-02-21 12:17:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SplashController#index as HTML
+  Rendered splash/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+Completed 200 OK in 580ms (Views: 569.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/application.self-a15ac16ca3f3d1dd84d4a9d5ef28783ef680c0991ca0e2c4772f2a9ff33a3d0c.css?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-21 12:17:05 -0800

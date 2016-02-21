@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   #Routes CRUD jobs
   get "/jobs/:id", to: "jobs#show", as: "job"
-  post "/users/:id/jobs", to "jobs#new", as "new_job"
+  post "/users/:id/jobs", to: "jobs#new", as: "new_job"
   get "/jobs/:id/edit", to: "jobs#edit", as: "edit_job"
   patch "/jobs/:id", to: "jobs#update"
   delete "/jobs/:id", to: "jobs#destroy"
