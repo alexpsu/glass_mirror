@@ -11239,3 +11239,6 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mJob Load (0.5ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mMilestone Load (0.4ms)[0m  [1mSELECT "milestones".* FROM "milestones"[0m
