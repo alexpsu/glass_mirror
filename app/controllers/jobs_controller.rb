@@ -11,6 +11,13 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+
+    milestone_title = ["Apply", "Email", "Interview"]
+    milestone_title.each do |mil_title|
+      milestone = Milestone.new({title: mil_title, status: false})
+      @job.milestones << milestone
+    end
+
     current_user.jobs << @job
     if @job.save
       flash[:notice] = "Successfully created job"
@@ -64,6 +71,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes, milestones_attributes: [ :title ])
+      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes)
     end
 end

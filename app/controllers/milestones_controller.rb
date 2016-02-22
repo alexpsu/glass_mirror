@@ -29,12 +29,13 @@ class MilestonesController < ApplicationController
     def set_job
       @job = Job.find(params[:id])
     end
+
     def milestone_params
       params.require(:milestone).permit(:title, :job_id)
     end
 
     def job_params
-      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes, milestones_attributes: [ :title ])
+      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes)
     end
 
 end
