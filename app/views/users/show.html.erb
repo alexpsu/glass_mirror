@@ -28,18 +28,12 @@
         <% @user.jobs.each do |job| %>
           <tr>
             <td>
-              <h4 class="accent-text splash-btn"><%= job.title %></h4> <h4 class="sec-text splash-btn">at</h4>
-              <h4 class="accent-text splash-btn"><%= job.company %></h4> <h4 class="sec-text splash-btn">Last updated</h4>
-              <h4 class="accent-text splash-btn"><%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
-              <div class="pull-right">
-                <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-{{_id}}">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                </a>
-
-                <!-- trash can icon to delete todo -->
-                 <a href="javascript:void(0)" class="delete-todo">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </a>
+              <h4 class="accent-text splash-btn"><%= job.title %></h4> <h5 class="sec-text splash-btn">at</h5>
+              <h4 class="accent-text splash-btn"><%= job.company %>.</h4> <h5 class="sec-text splash-btn">Last updated</h5>
+              <h5 class="accent-text splash-btn"><%= job.updated_at.strftime("%B %-d") %></h5>
+              <div class="pull-right icon">
+                <%= link_to "", edit_job_path(job.id), class: 'glyphicon glyphicon-pencil' %>
+                <%= link_to "", job, method: :delete, class: 'glyphicon glyphicon-trash' %>
               </div>
             </td>
           </tr>
