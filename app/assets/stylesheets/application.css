@@ -16,6 +16,11 @@
   padding-top: 1%;
 }
 
+.job-info {
+  align-items: left;
+  align-content: left;
+}
+
 .inline {
   display: inline-block;
 }

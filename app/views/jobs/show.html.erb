@@ -5,11 +5,25 @@
     <h2 class="title inline"><%= @job.title %></h2><h3 class="inline">&nbspat&nbsp</h3><h2 class="title inline"><%= @job.company %></h2>
 </div>
 
-<div class="col-md-6 container">
+<div class="job-container center-block">
 
-  <div class="pull-left"
+  <div class="col-lg-4 col-md-12 pull-left">
+    <h3>Job Info</h3>
+    <hr>
+    <div class="job-info">
+      <h5 class="sec-text inline">Interest Level - </h5><h5 class="accent-text inline"><%= @job.interest_level %></h5>
+      <br>
+      <h5 class="sec-text inline">Location - </h5><h5 class="accent-text inline"><%= @job.location %></h5>
+      <br>
+      <h5 class="sec-text inline">Link - </h5><h5 class="accent-text inline"><a href=http://<%= @job.url %>><%= @job.url %></a></h5>
+      <br>
+      <h5 class="sec-text inline">Found at - </h5><h5 class="accent-text inline"><%= @job.discovery %></h5>
+      <br>
+      <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"><%= @job.notes %></h5>
+    </div>
+  </div>
 
-  <div class="pull-right">
+  <div class="col-lg-4 col-md-12 rm-padding-md pull-right">
     <% @job.milestones.each do |milestone| %>
       <%= milestone.title %>
       <%= check_box_tag :status, milestone.status %>
