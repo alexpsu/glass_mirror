@@ -1,8 +1,8 @@
 <div class="btn-group">
-  <div class="splash-btn">
+  <div class="splash-btn btn-del">
     <%= button_to "edit profile", edit_user_path(@user.id), method: :get, class: 'btn btn-xs btn-light center-block' %>
   </div>
-  <div class="splash-btn">
+  <div class="splash-btn btn-del">
     <%= button_to "remove profile", @user, method: :delete, class: 'btn btn-xs btn-light center-block'  %>
   </div>
 </div>
@@ -19,14 +19,32 @@
   </div>
 
   <div class="button text-center">
-    <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-success center-block'  %>
+    <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-add center-block'  %>
   </div>
 
-  <div class="container job-container">
-    <% @user.jobs.each do |job| %>
-      <div class="col-lg-12 text-center">
-        <h4><%= job.title %> at <%= job.company %> Last updated <%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
-      </div>
-    <% end %>
-    </div>
+  <div class="job-container center-block">
+    <table class="table table-hover">
+      <tbody>
+        <% @user.jobs.each do |job| %>
+          <tr>
+            <td>
+              <h4 class="accent-text splash-btn"><%= job.title %></h4> <h4 class="sec-text splash-btn">at</h4>
+              <h4 class="accent-text splash-btn"><%= job.company %></h4> <h4 class="sec-text splash-btn">Last updated</h4>
+              <h4 class="accent-text splash-btn"><%= job.updated_at.strftime("%B %-d, %Y, at %l:%M%P") %></h4>
+              <div class="pull-right">
+                <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-{{_id}}">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+
+                <!-- trash can icon to delete todo -->
+                 <a href="javascript:void(0)" class="delete-todo">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </a>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

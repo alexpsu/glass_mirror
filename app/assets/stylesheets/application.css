@@ -9,10 +9,30 @@
  *= require_tree .
  *= require_self
  */
- .form-horizontal {
-   width: 350px;
- }
 
- .splash-btn {
-   display: inline-block;
- }
+.btn-add {
+  background: white;
+  color: #2199E2;
+  border: solid 1px #2199E2;
+  font-weight: 600;
+}
+
+.job-container {
+  margin-top: 3%;
+  padding: 1%;
+  width: 70%;
+}
+
+.form-horizontal {
+ width: 30%;
+}
+
+.form-container {
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.splash-btn {
+ display: inline-block;
+}
