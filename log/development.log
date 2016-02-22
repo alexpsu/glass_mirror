@@ -35182,3 +35182,1307 @@ Processing by MilestonesController#edit as HTML
   [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
   Rendered milestones/edit.html.erb within layouts/application (4.2ms)
 Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:21:58 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VKjP1TTBzFOYacG0IK1wU/pJLot7UqrbtGyxw2WOQxk2wydUJjv1UMU0qbU7c7sbT9CF0g3R3LRbkxLSN3Y4fg==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Hey Joe", "id"=>"553"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:21:58.333801"], ["updated_at", "2016-02-22 17:21:58.333801"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:21:58.334723"], ["updated_at", "2016-02-22 17:21:58.334723"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:21:58.335423"], ["updated_at", "2016-02-22 17:21:58.335423"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 35ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:21:58 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:22:13 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:22:16 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6tyjjnE2QJfWyg21XE23dm67fY35qBbwko5w0tyzCDaIt0sPY8x5lIuXZbRHk3w+2yLW1I8rYJ99cdPDjktzUQ==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Interview", "id"=>"553"}, "3"=>{"title"=>"Apply", "id"=>"554"}, "4"=>{"title"=>"dbj,ahdjk", "id"=>"555"}, "5"=>{"title"=>"Hey Joe", "id"=>"556"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.524121"], ["updated_at", "2016-02-22 17:22:16.524121"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.531975"], ["updated_at", "2016-02-22 17:22:16.531975"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.535693"], ["updated_at", "2016-02-22 17:22:16.535693"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.538642"], ["updated_at", "2016-02-22 17:22:16.538642"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.540230"], ["updated_at", "2016-02-22 17:22:16.540230"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:22:16.541346"], ["updated_at", "2016-02-22 17:22:16.541346"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 25ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:22:16 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mMilestone Load (0.2ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.5ms)
+  [1m[36mMilestone Load (0.6ms)[0m  [1mSELECT  "milestones".* FROM "milestones"  ORDER BY "milestones"."id" DESC LIMIT 1[0m
+  [1m[35mMilestone Load (9.2ms)[0m  SELECT "milestones".* FROM "milestones"
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:26:15 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:26:22 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-02-22 09:26:25 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.2ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.1ms)
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", nil]]
+  [1m[35mJob Load (6.8ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", nil]]
+  [1m[36mJob Load (1.6ms)[0m  [1mSELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" DESC LIMIT 1[0m
+  [1m[35mJob Load (1.5ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", nil]]
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:32:06 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S80qVolUo+QRHngk/uh0RLp4LSXjoz8ctLKAEKnFTIwppsLXm66a50xDECXlNr8MD+GGfJUgSXNbTSMB+z036w==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Interview", "id"=>"553"}, "3"=>{"title"=>"Apply", "id"=>"554"}, "4"=>{"title"=>"Email", "id"=>"555"}, "5"=>{"title"=>"Hey Joe", "id"=>"556"}, "6"=>{"title"=>"Apply", "id"=>"557"}, "7"=>{"title"=>"Email", "id"=>"558"}, "8"=>{"title"=>"Interview", "id"=>"559"}, "9"=>{"title"=>"Apply", "id"=>"560"}, "10"=>{"title"=>"dbj,ahdjk", "id"=>"561"}, "11"=>{"title"=>"Hey Joe", "id"=>"562"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.492940"], ["updated_at", "2016-02-22 17:32:06.492940"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.493945"], ["updated_at", "2016-02-22 17:32:06.493945"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.494698"], ["updated_at", "2016-02-22 17:32:06.494698"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.496107"], ["updated_at", "2016-02-22 17:32:06.496107"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.496816"], ["updated_at", "2016-02-22 17:32:06.496816"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.497544"], ["updated_at", "2016-02-22 17:32:06.497544"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.498226"], ["updated_at", "2016-02-22 17:32:06.498226"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.498977"], ["updated_at", "2016-02-22 17:32:06.498977"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.499625"], ["updated_at", "2016-02-22 17:32:06.499625"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.500616"], ["updated_at", "2016-02-22 17:32:06.500616"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.501824"], ["updated_at", "2016-02-22 17:32:06.501824"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:06.503073"], ["updated_at", "2016-02-22 17:32:06.503073"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 44ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:32:06 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:32:16 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "12"]]
+  [1m[36mMilestone Load (0.2ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:32:19 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qv89NbreqIKu+F2I4cMV3oM6Vb/FuCsHawO0zNMfAmfIlNW0qCSRgfOlNYn6Hd6WNqP+5rM7XWiE/Bfdged5AA==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Interview", "id"=>"553"}, "3"=>{"title"=>"Apply", "id"=>"554"}, "4"=>{"title"=>"Email", "id"=>"555"}, "5"=>{"title"=>"Hey Joe", "id"=>"556"}, "6"=>{"title"=>"Apply", "id"=>"563"}, "7"=>{"title"=>"Email", "id"=>"564"}, "8"=>{"title"=>"Interview", "id"=>"565"}, "9"=>{"title"=>"Apply", "id"=>"566"}, "10"=>{"title"=>"Email", "id"=>"567"}, "11"=>{"title"=>"Hey Joe", "id"=>"568"}, "12"=>{"title"=>"Apply", "id"=>"569"}, "13"=>{"title"=>"Email", "id"=>"570"}, "14"=>{"title"=>"Interview", "id"=>"571"}, "15"=>{"title"=>"Apply", "id"=>"572"}, "16"=>{"title"=>"dbj,ahdjk", "id"=>"573"}, "17"=>{"title"=>"Hey Joe", "id"=>"574"}, "18"=>{"title"=>"Apply", "id"=>"557"}, "19"=>{"title"=>"Email", "id"=>"558"}, "20"=>{"title"=>"Interview", "id"=>"559"}, "21"=>{"title"=>"Apply", "id"=>"560"}, "22"=>{"title"=>"dbj,ahdjk", "id"=>"561"}, "23"=>{"title"=>"Hey Joe", "id"=>"562"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.392057"], ["updated_at", "2016-02-22 17:32:19.392057"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.393168"], ["updated_at", "2016-02-22 17:32:19.393168"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.393928"], ["updated_at", "2016-02-22 17:32:19.393928"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.394646"], ["updated_at", "2016-02-22 17:32:19.394646"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.395380"], ["updated_at", "2016-02-22 17:32:19.395380"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.396156"], ["updated_at", "2016-02-22 17:32:19.396156"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.397075"], ["updated_at", "2016-02-22 17:32:19.397075"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.397783"], ["updated_at", "2016-02-22 17:32:19.397783"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.398487"], ["updated_at", "2016-02-22 17:32:19.398487"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.399173"], ["updated_at", "2016-02-22 17:32:19.399173"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.400064"], ["updated_at", "2016-02-22 17:32:19.400064"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.400788"], ["updated_at", "2016-02-22 17:32:19.400788"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.401582"], ["updated_at", "2016-02-22 17:32:19.401582"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.402296"], ["updated_at", "2016-02-22 17:32:19.402296"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.403060"], ["updated_at", "2016-02-22 17:32:19.403060"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.403959"], ["updated_at", "2016-02-22 17:32:19.403959"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.405911"], ["updated_at", "2016-02-22 17:32:19.405911"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.407378"], ["updated_at", "2016-02-22 17:32:19.407378"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.408294"], ["updated_at", "2016-02-22 17:32:19.408294"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.409098"], ["updated_at", "2016-02-22 17:32:19.409098"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.409850"], ["updated_at", "2016-02-22 17:32:19.409850"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.410581"], ["updated_at", "2016-02-22 17:32:19.410581"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.411327"], ["updated_at", "2016-02-22 17:32:19.411327"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:32:19.412130"], ["updated_at", "2016-02-22 17:32:19.412130"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 35ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:32:19 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:33:19 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35mMilestone Load (0.3ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 53ms (Views: 40.1ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:33:40 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dVnrW+QTUKblbCGHo4ryKwoWrGDPtq3BXIORl9ktssUXMgPa9ulppbgxSYa4VDljv48HObk1266zfDKGi9XJog==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Interview", "id"=>"553"}, "3"=>{"title"=>"Apply", "id"=>"554"}, "4"=>{"title"=>"Email", "id"=>"555"}, "5"=>{"title"=>"Hey Joe", "id"=>"556"}, "6"=>{"title"=>"Apply", "id"=>"563"}, "7"=>{"title"=>"Email", "id"=>"564"}, "8"=>{"title"=>"Interview", "id"=>"565"}, "9"=>{"title"=>"Apply", "id"=>"566"}, "10"=>{"title"=>"Email", "id"=>"567"}, "11"=>{"title"=>"Hey Joe", "id"=>"568"}, "12"=>{"title"=>"Apply", "id"=>"569"}, "13"=>{"title"=>"Email", "id"=>"570"}, "14"=>{"title"=>"Interview", "id"=>"571"}, "15"=>{"title"=>"Apply", "id"=>"572"}, "16"=>{"title"=>"dbj,ahdjk", "id"=>"573"}, "17"=>{"title"=>"Hey Joe", "id"=>"574"}, "18"=>{"title"=>"Apply", "id"=>"557"}, "19"=>{"title"=>"Email", "id"=>"558"}, "20"=>{"title"=>"Interview", "id"=>"559"}, "21"=>{"title"=>"Apply", "id"=>"560"}, "22"=>{"title"=>"dbj,ahdjk", "id"=>"561"}, "23"=>{"title"=>"Hey Joe", "id"=>"562"}, "24"=>{"title"=>"Apply", "id"=>"575"}, "25"=>{"title"=>"Email", "id"=>"576"}, "26"=>{"title"=>"Interview", "id"=>"577"}, "27"=>{"title"=>"Apply", "id"=>"578"}, "28"=>{"title"=>"Email", "id"=>"579"}, "29"=>{"title"=>"Hey Joe", "id"=>"580"}, "30"=>{"title"=>"Apply", "id"=>"581"}, "31"=>{"title"=>"Email", "id"=>"582"}, "32"=>{"title"=>"Interview", "id"=>"583"}, "33"=>{"title"=>"Apply", "id"=>"584"}, "34"=>{"title"=>"Email", "id"=>"585"}, "35"=>{"title"=>"Hey Joe", "id"=>"586"}, "36"=>{"title"=>"Apply", "id"=>"587"}, "37"=>{"title"=>"Email", "id"=>"588"}, "38"=>{"title"=>"Interview", "id"=>"589"}, "39"=>{"title"=>"Apply", "id"=>"590"}, "40"=>{"title"=>"dbj,ahdjk", "id"=>"591"}, "41"=>{"title"=>"Hey Joe", "id"=>"592"}, "42"=>{"title"=>"Apply", "id"=>"593"}, "43"=>{"title"=>"Email", "id"=>"594"}, "44"=>{"title"=>"Interview", "id"=>"595"}, "45"=>{"title"=>"Apply", "id"=>"596"}, "46"=>{"title"=>"dbj,ahdjk", "id"=>"597"}, "47"=>{"title"=>"Hey Joe", "id"=>"598"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.869212"], ["updated_at", "2016-02-22 17:33:40.869212"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.870251"], ["updated_at", "2016-02-22 17:33:40.870251"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.870980"], ["updated_at", "2016-02-22 17:33:40.870980"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.871698"], ["updated_at", "2016-02-22 17:33:40.871698"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.872396"], ["updated_at", "2016-02-22 17:33:40.872396"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.873043"], ["updated_at", "2016-02-22 17:33:40.873043"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.873722"], ["updated_at", "2016-02-22 17:33:40.873722"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.874478"], ["updated_at", "2016-02-22 17:33:40.874478"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.875451"], ["updated_at", "2016-02-22 17:33:40.875451"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.876808"], ["updated_at", "2016-02-22 17:33:40.876808"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.877913"], ["updated_at", "2016-02-22 17:33:40.877913"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.879234"], ["updated_at", "2016-02-22 17:33:40.879234"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.880042"], ["updated_at", "2016-02-22 17:33:40.880042"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.880763"], ["updated_at", "2016-02-22 17:33:40.880763"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.881455"], ["updated_at", "2016-02-22 17:33:40.881455"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.882157"], ["updated_at", "2016-02-22 17:33:40.882157"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.882889"], ["updated_at", "2016-02-22 17:33:40.882889"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.883597"], ["updated_at", "2016-02-22 17:33:40.883597"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.884268"], ["updated_at", "2016-02-22 17:33:40.884268"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.884954"], ["updated_at", "2016-02-22 17:33:40.884954"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.885632"], ["updated_at", "2016-02-22 17:33:40.885632"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.886506"], ["updated_at", "2016-02-22 17:33:40.886506"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.887212"], ["updated_at", "2016-02-22 17:33:40.887212"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.887886"], ["updated_at", "2016-02-22 17:33:40.887886"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.888534"], ["updated_at", "2016-02-22 17:33:40.888534"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.889204"], ["updated_at", "2016-02-22 17:33:40.889204"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.889876"], ["updated_at", "2016-02-22 17:33:40.889876"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.890541"], ["updated_at", "2016-02-22 17:33:40.890541"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.891236"], ["updated_at", "2016-02-22 17:33:40.891236"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.891940"], ["updated_at", "2016-02-22 17:33:40.891940"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.892687"], ["updated_at", "2016-02-22 17:33:40.892687"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.893526"], ["updated_at", "2016-02-22 17:33:40.893526"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.894474"], ["updated_at", "2016-02-22 17:33:40.894474"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.895938"], ["updated_at", "2016-02-22 17:33:40.895938"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.897477"], ["updated_at", "2016-02-22 17:33:40.897477"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.898664"], ["updated_at", "2016-02-22 17:33:40.898664"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.899724"], ["updated_at", "2016-02-22 17:33:40.899724"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.900508"], ["updated_at", "2016-02-22 17:33:40.900508"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.901318"], ["updated_at", "2016-02-22 17:33:40.901318"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.902032"], ["updated_at", "2016-02-22 17:33:40.902032"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.902711"], ["updated_at", "2016-02-22 17:33:40.902711"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.903472"], ["updated_at", "2016-02-22 17:33:40.903472"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.904295"], ["updated_at", "2016-02-22 17:33:40.904295"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.904960"], ["updated_at", "2016-02-22 17:33:40.904960"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.905737"], ["updated_at", "2016-02-22 17:33:40.905737"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.906438"], ["updated_at", "2016-02-22 17:33:40.906438"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.907160"], ["updated_at", "2016-02-22 17:33:40.907160"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:33:40.907879"], ["updated_at", "2016-02-22 17:33:40.907879"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 62ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:33:40 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mMilestone Load (0.6ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (7.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:33:43 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "12"]]
+  [1m[36mMilestone Load (0.4ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/12/edit" for ::1 at 2016-02-22 09:33:46 -0800
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered jobs/_form.html.erb (1.5ms)
+  Rendered jobs/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:33:50 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ApBTcWZuGERJj05QSz7AnFsQy/5+qltMCeFeLwRS06hg+7vwdJQhRxTSJlFQ4AvU7olgpwgpLSPmHv0+Vqqozw==", "job"=>{"company"=>"dhajdh", "title"=>"dhasl", "location"=>"hdjsahd", "url"=>"", "discovery"=>"", "interest_level"=>"", "notes"=>""}, "commit"=>"Submit", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Unpermitted parameter: discovery
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:33:50 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:33:52 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/13/edit" for ::1 at 2016-02-22 09:33:53 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered users/_form.html.erb (1.3ms)
+  Rendered users/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:34:12 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35mMilestone Load (0.3ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/12/edit_milestones" for ::1 at 2016-02-22 09:34:14 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "12"]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  Rendered milestones/edit.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/jobs/12" for ::1 at 2016-02-22 09:34:23 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QkgoyczQHQO3CRiJ1UUGbWr66B94EN8ipgwFKaGPTq/YsgiNcl5d1OBTGM8i99RADJA+QtjNRNlZ5MF9H5GXQ==", "job"=>{"job_id"=>"12", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"551"}, "1"=>{"title"=>"Email", "id"=>"552"}, "2"=>{"title"=>"Interview", "id"=>"553"}, "3"=>{"title"=>"Apply", "id"=>"554"}, "4"=>{"title"=>"Email", "id"=>"555"}, "5"=>{"title"=>"Hey Joe", "id"=>"556"}, "6"=>{"title"=>"Apply", "id"=>"563"}, "7"=>{"title"=>"Email", "id"=>"564"}, "8"=>{"title"=>"Interview", "id"=>"565"}, "9"=>{"title"=>"Apply", "id"=>"566"}, "10"=>{"title"=>"Email", "id"=>"567"}, "11"=>{"title"=>"Hey Joe", "id"=>"568"}, "12"=>{"title"=>"Apply", "id"=>"569"}, "13"=>{"title"=>"Email", "id"=>"570"}, "14"=>{"title"=>"Interview", "id"=>"571"}, "15"=>{"title"=>"Apply", "id"=>"572"}, "16"=>{"title"=>"dbj,ahdjk", "id"=>"573"}, "17"=>{"title"=>"Hey Joe", "id"=>"574"}, "18"=>{"title"=>"Apply", "id"=>"557"}, "19"=>{"title"=>"Email", "id"=>"558"}, "20"=>{"title"=>"Interview", "id"=>"559"}, "21"=>{"title"=>"Apply", "id"=>"560"}, "22"=>{"title"=>"dbj,ahdjk", "id"=>"561"}, "23"=>{"title"=>"Hey Joe", "id"=>"562"}, "24"=>{"title"=>"Apply", "id"=>"575"}, "25"=>{"title"=>"Email", "id"=>"576"}, "26"=>{"title"=>"Interview", "id"=>"577"}, "27"=>{"title"=>"Apply", "id"=>"578"}, "28"=>{"title"=>"Email", "id"=>"579"}, "29"=>{"title"=>"Hey Joe", "id"=>"580"}, "30"=>{"title"=>"Apply", "id"=>"581"}, "31"=>{"title"=>"Email", "id"=>"582"}, "32"=>{"title"=>"Interview", "id"=>"583"}, "33"=>{"title"=>"Apply", "id"=>"584"}, "34"=>{"title"=>"Email", "id"=>"585"}, "35"=>{"title"=>"Hey Joe", "id"=>"586"}, "36"=>{"title"=>"Apply", "id"=>"587"}, "37"=>{"title"=>"Email", "id"=>"588"}, "38"=>{"title"=>"Interview", "id"=>"589"}, "39"=>{"title"=>"Apply", "id"=>"590"}, "40"=>{"title"=>"dbj,ahdjk", "id"=>"591"}, "41"=>{"title"=>"Hey Joe", "id"=>"592"}, "42"=>{"title"=>"Apply", "id"=>"593"}, "43"=>{"title"=>"Email", "id"=>"594"}, "44"=>{"title"=>"Interview", "id"=>"595"}, "45"=>{"title"=>"Apply", "id"=>"596"}, "46"=>{"title"=>"dbj,ahdjk", "id"=>"597"}, "47"=>{"title"=>"Hey Joe", "id"=>"598"}, "48"=>{"title"=>"Apply", "id"=>"599"}, "49"=>{"title"=>"Email", "id"=>"600"}, "50"=>{"title"=>"Interview", "id"=>"601"}, "51"=>{"title"=>"Apply", "id"=>"602"}, "52"=>{"title"=>"Email", "id"=>"603"}, "53"=>{"title"=>"Hey Joe", "id"=>"604"}, "54"=>{"title"=>"Apply", "id"=>"605"}, "55"=>{"title"=>"Email", "id"=>"606"}, "56"=>{"title"=>"Interview", "id"=>"607"}, "57"=>{"title"=>"Apply", "id"=>"608"}, "58"=>{"title"=>"Email", "id"=>"609"}, "59"=>{"title"=>"Hey Joe", "id"=>"610"}, "60"=>{"title"=>"Apply", "id"=>"611"}, "61"=>{"title"=>"Email", "id"=>"612"}, "62"=>{"title"=>"Interview", "id"=>"613"}, "63"=>{"title"=>"Apply", "id"=>"614"}, "64"=>{"title"=>"dbj,ahdjk", "id"=>"615"}, "65"=>{"title"=>"Hey Joe", "id"=>"616"}, "66"=>{"title"=>"Apply", "id"=>"617"}, "67"=>{"title"=>"Email", "id"=>"618"}, "68"=>{"title"=>"Interview", "id"=>"619"}, "69"=>{"title"=>"Apply", "id"=>"620"}, "70"=>{"title"=>"dbj,ahdjk", "id"=>"621"}, "71"=>{"title"=>"Hey Joe", "id"=>"622"}, "72"=>{"title"=>"Apply", "id"=>"623"}, "73"=>{"title"=>"Email", "id"=>"624"}, "74"=>{"title"=>"Interview", "id"=>"625"}, "75"=>{"title"=>"Apply", "id"=>"626"}, "76"=>{"title"=>"Email", "id"=>"627"}, "77"=>{"title"=>"Hey Joe", "id"=>"628"}, "78"=>{"title"=>"Apply", "id"=>"629"}, "79"=>{"title"=>"Email", "id"=>"630"}, "80"=>{"title"=>"Interview", "id"=>"631"}, "81"=>{"title"=>"Apply", "id"=>"632"}, "82"=>{"title"=>"Email", "id"=>"633"}, "83"=>{"title"=>"Hey Joe", "id"=>"634"}, "84"=>{"title"=>"Apply", "id"=>"635"}, "85"=>{"title"=>"Email", "id"=>"636"}, "86"=>{"title"=>"Interview", "id"=>"637"}, "87"=>{"title"=>"Apply", "id"=>"638"}, "88"=>{"title"=>"dbj,ahdjk", "id"=>"639"}, "89"=>{"title"=>"Hey Joe", "id"=>"640"}, "90"=>{"title"=>"Apply", "id"=>"641"}, "91"=>{"title"=>"Email", "id"=>"642"}, "92"=>{"title"=>"Interview", "id"=>"643"}, "93"=>{"title"=>"Apply", "id"=>"644"}, "94"=>{"title"=>"dbj,ahdjk", "id"=>"645"}, "95"=>{"title"=>"Please don't duplicate", "id"=>"646"}}}, "commit"=>"Submit", "id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.149577"], ["updated_at", "2016-02-22 17:34:23.149577"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.151157"], ["updated_at", "2016-02-22 17:34:23.151157"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.152410"], ["updated_at", "2016-02-22 17:34:23.152410"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.153459"], ["updated_at", "2016-02-22 17:34:23.153459"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.154561"], ["updated_at", "2016-02-22 17:34:23.154561"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.155540"], ["updated_at", "2016-02-22 17:34:23.155540"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.156351"], ["updated_at", "2016-02-22 17:34:23.156351"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.157030"], ["updated_at", "2016-02-22 17:34:23.157030"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.157775"], ["updated_at", "2016-02-22 17:34:23.157775"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.158517"], ["updated_at", "2016-02-22 17:34:23.158517"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.159341"], ["updated_at", "2016-02-22 17:34:23.159341"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.160083"], ["updated_at", "2016-02-22 17:34:23.160083"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.160868"], ["updated_at", "2016-02-22 17:34:23.160868"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.161593"], ["updated_at", "2016-02-22 17:34:23.161593"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.162293"], ["updated_at", "2016-02-22 17:34:23.162293"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.163021"], ["updated_at", "2016-02-22 17:34:23.163021"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.163731"], ["updated_at", "2016-02-22 17:34:23.163731"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.164400"], ["updated_at", "2016-02-22 17:34:23.164400"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.165119"], ["updated_at", "2016-02-22 17:34:23.165119"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.165790"], ["updated_at", "2016-02-22 17:34:23.165790"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.166769"], ["updated_at", "2016-02-22 17:34:23.166769"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.168108"], ["updated_at", "2016-02-22 17:34:23.168108"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.169373"], ["updated_at", "2016-02-22 17:34:23.169373"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.170369"], ["updated_at", "2016-02-22 17:34:23.170369"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.171215"], ["updated_at", "2016-02-22 17:34:23.171215"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.172036"], ["updated_at", "2016-02-22 17:34:23.172036"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.172761"], ["updated_at", "2016-02-22 17:34:23.172761"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.173492"], ["updated_at", "2016-02-22 17:34:23.173492"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.174237"], ["updated_at", "2016-02-22 17:34:23.174237"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.175117"], ["updated_at", "2016-02-22 17:34:23.175117"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.175863"], ["updated_at", "2016-02-22 17:34:23.175863"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.176563"], ["updated_at", "2016-02-22 17:34:23.176563"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.177258"], ["updated_at", "2016-02-22 17:34:23.177258"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.177929"], ["updated_at", "2016-02-22 17:34:23.177929"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.178610"], ["updated_at", "2016-02-22 17:34:23.178610"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.179272"], ["updated_at", "2016-02-22 17:34:23.179272"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.179972"], ["updated_at", "2016-02-22 17:34:23.179972"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.180634"], ["updated_at", "2016-02-22 17:34:23.180634"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.181316"], ["updated_at", "2016-02-22 17:34:23.181316"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.181992"], ["updated_at", "2016-02-22 17:34:23.181992"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.182753"], ["updated_at", "2016-02-22 17:34:23.182753"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.183644"], ["updated_at", "2016-02-22 17:34:23.183644"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.184943"], ["updated_at", "2016-02-22 17:34:23.184943"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.185999"], ["updated_at", "2016-02-22 17:34:23.185999"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.186802"], ["updated_at", "2016-02-22 17:34:23.186802"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.187736"], ["updated_at", "2016-02-22 17:34:23.187736"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.188612"], ["updated_at", "2016-02-22 17:34:23.188612"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.189373"], ["updated_at", "2016-02-22 17:34:23.189373"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.190174"], ["updated_at", "2016-02-22 17:34:23.190174"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.191068"], ["updated_at", "2016-02-22 17:34:23.191068"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.191852"], ["updated_at", "2016-02-22 17:34:23.191852"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.192605"], ["updated_at", "2016-02-22 17:34:23.192605"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.193375"], ["updated_at", "2016-02-22 17:34:23.193375"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.194051"], ["updated_at", "2016-02-22 17:34:23.194051"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.194841"], ["updated_at", "2016-02-22 17:34:23.194841"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.195573"], ["updated_at", "2016-02-22 17:34:23.195573"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.196249"], ["updated_at", "2016-02-22 17:34:23.196249"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.197011"], ["updated_at", "2016-02-22 17:34:23.197011"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.197691"], ["updated_at", "2016-02-22 17:34:23.197691"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.198401"], ["updated_at", "2016-02-22 17:34:23.198401"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.199097"], ["updated_at", "2016-02-22 17:34:23.199097"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.199892"], ["updated_at", "2016-02-22 17:34:23.199892"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.201399"], ["updated_at", "2016-02-22 17:34:23.201399"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.202714"], ["updated_at", "2016-02-22 17:34:23.202714"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.203612"], ["updated_at", "2016-02-22 17:34:23.203612"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.204505"], ["updated_at", "2016-02-22 17:34:23.204505"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.205402"], ["updated_at", "2016-02-22 17:34:23.205402"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.206331"], ["updated_at", "2016-02-22 17:34:23.206331"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.207112"], ["updated_at", "2016-02-22 17:34:23.207112"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.208037"], ["updated_at", "2016-02-22 17:34:23.208037"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.208800"], ["updated_at", "2016-02-22 17:34:23.208800"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.209501"], ["updated_at", "2016-02-22 17:34:23.209501"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.210241"], ["updated_at", "2016-02-22 17:34:23.210241"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.210929"], ["updated_at", "2016-02-22 17:34:23.210929"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.211613"], ["updated_at", "2016-02-22 17:34:23.211613"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.212343"], ["updated_at", "2016-02-22 17:34:23.212343"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.213028"], ["updated_at", "2016-02-22 17:34:23.213028"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.213704"], ["updated_at", "2016-02-22 17:34:23.213704"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.214477"], ["updated_at", "2016-02-22 17:34:23.214477"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.215196"], ["updated_at", "2016-02-22 17:34:23.215196"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.216298"], ["updated_at", "2016-02-22 17:34:23.216298"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.217203"], ["updated_at", "2016-02-22 17:34:23.217203"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.218771"], ["updated_at", "2016-02-22 17:34:23.218771"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.219940"], ["updated_at", "2016-02-22 17:34:23.219940"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.221042"], ["updated_at", "2016-02-22 17:34:23.221042"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.222041"], ["updated_at", "2016-02-22 17:34:23.222041"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.222996"], ["updated_at", "2016-02-22 17:34:23.222996"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.223806"], ["updated_at", "2016-02-22 17:34:23.223806"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.224597"], ["updated_at", "2016-02-22 17:34:23.224597"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hey Joe"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.225296"], ["updated_at", "2016-02-22 17:34:23.225296"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.226032"], ["updated_at", "2016-02-22 17:34:23.226032"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.226761"], ["updated_at", "2016-02-22 17:34:23.226761"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.227529"], ["updated_at", "2016-02-22 17:34:23.227529"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Apply"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.228223"], ["updated_at", "2016-02-22 17:34:23.228223"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "dbj,ahdjk"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.228917"], ["updated_at", "2016-02-22 17:34:23.228917"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Please don't duplicate"], ["job_id", 12], ["created_at", "2016-02-22 17:34:23.229627"], ["updated_at", "2016-02-22 17:34:23.229627"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/12
+Completed 302 Found in 116ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/jobs/12" for ::1 at 2016-02-22 09:34:23 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mMilestone Load (0.4ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 12]]
+  Rendered jobs/show.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:34:27 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/7/edit" for ::1 at 2016-02-22 09:34:58 -0800
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered jobs/_form.html.erb (1.8ms)
+  Rendered jobs/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 36ms (Views: 20.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/jobs/7/edit_milestones" for ::1 at 2016-02-22 09:35:01 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mMilestone Load (0.6ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 7]]
+  Rendered milestones/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/jobs/7" for ::1 at 2016-02-22 09:35:06 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NeJAou9mzXTZHXE0dcadic9c7TnO3Ram8abRHH03rllXiagj/Zz0d4RAGTVuGFbBesVGYLheYMkeWXINL8/VPg==", "job"=>{"job_id"=>"7", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"515"}, "1"=>{"title"=>"Email", "id"=>"516"}, "2"=>{"title"=>"Hey Joe", "id"=>"517"}}}, "commit"=>"Submit", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: id
+Unpermitted parameter: job_id
+
+
+Started GET "/jobs/7/edit_milestones" for ::1 at 2016-02-22 09:36:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mJob Load (0.3ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  [1m[35mMilestone Load (0.3ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 7]]
+  Rendered milestones/edit.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 331ms (Views: 282.5ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/jobs/7" for ::1 at 2016-02-22 09:36:54 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dy7z1XiGc5nXqx1cWOZnpCjZoUEu4fSTXDSFbxfWg9htRRtUanxKmor2dV1DOKzsnUAKGFhigvyzyyZ+RS74vw==", "job"=>{"job_id"=>"7", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"515"}, "1"=>{"title"=>"Email", "id"=>"516"}, "2"=>{"title"=>"Hey Joe", "id"=>"517"}}}, "commit"=>"Submit", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+
+
+Started GET "/jobs/7" for ::1 at 2016-02-22 09:37:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mJob Load (0.3ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 7]]
+  Rendered jobs/show.html.erb within layouts/application (20.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 305ms (Views: 271.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/application.self-5f92ae343c095ee025bedad634bf13611b89fa1872f702264ff81775a7536601.css?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 09:37:21 -0800
+
+
+Started GET "/jobs/7/edit_milestones" for ::1 at 2016-02-22 09:37:24 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 7]]
+  Rendered milestones/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 52ms (Views: 43.7ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/7" for ::1 at 2016-02-22 09:37:28 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OKprP58hxOGDShuzksaRgDI8TM+kUQad+57wQbHpZHRawYO+jdv94t4Xc7KJGFrIh6XnltLScPIUYVNQ4xEfEw==", "job"=>{"job_id"=>"7", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"515"}, "1"=>{"title"=>"Email", "id"=>"516"}, "2"=>{"title"=>"Hey Joe", "id"=>"517"}}}, "commit"=>"Submit", "id"=>"7"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Unpermitted parameter: job_id
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMilestone Load (11.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1 AND "milestones"."id" IN (515, 516, 517)  [["job_id", 7]]
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "milestones" SET "title" = $1, "updated_at" = $2 WHERE "milestones"."id" = $3[0m  [["title", "Hey Joe"], ["updated_at", "2016-02-22 17:37:28.407213"], ["id", 517]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/7
+Completed 302 Found in 24ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/jobs/7" for ::1 at 2016-02-22 09:37:28 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 7]]
+  Rendered jobs/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:31 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (11.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 40ms (Views: 31.3ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/jobs/7" for ::1 at 2016-02-22 09:42:35 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KXsSGyM5Tu4szR8nKqTdDQeRUgwq1Rrj990rchj8Gk5LEPqaMcN37XGQdyYxehZFsgj5VVxWbIwYIohjSgRhKQ==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 7]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 7]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 13ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:35 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/jobs/8" for ::1 at 2016-02-22 09:42:36 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CSEuzxOygviClo9YmOgC+pBO18vHnYg640LLYeaims1rSsZOAUi7+9/L51mDNsmyJdd8krEe/lUMvWhwtFrhqg==", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 8]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:36 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/jobs/9" for ::1 at 2016-02-22 09:42:37 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+3n4Ja+JmTUiZ3Vbc++bYnlrBEME/3mghLngmwV9kQOZEhCkvXOgNn86HVpoMVAqzPKvGnJ8D89rRkOKV4XqZA==", "id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 9]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 9]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:37 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/jobs/10" for ::1 at 2016-02-22 09:42:37 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QbjUB4Tkfqml9bNhsiCj/guvUeuXDc5hENpYSoZsiIwj0zyGlh5Hqvio22Cp/mi2vjb6suGOuA7/Jftb1JTz6w==", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 10]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 10]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:37 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/jobs/11" for ::1 at 2016-02-22 09:42:38 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w6Kl74W7tPfHrHJYTIRBv4sWQp288WWsvgA2pAErfbyhyU1ul0GN9JrxGllXWor3Po/pxMpyE8NR/5W1U9MG2w==", "id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 11]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 11]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 5ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:38 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/jobs/12" for ::1 at 2016-02-22 09:42:38 -0800
+Processing by JobsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"epd3frvqC39SfI/QpY5SiTLIMGP2BDo/wkD95rbbrRYY/J//qRAyfA8h59G+UJnBh1GbOoCHTFAtv1735CPWcQ==", "id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 12]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "jobs" WHERE "jobs"."id" = $1  [["id", 12]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/13" for ::1 at 2016-02-22 09:42:38 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/13/jobs" for ::1 at 2016-02-22 09:42:40 -0800
+Processing by JobsController#new as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered jobs/_form.html.erb (4.4ms)
+  Rendered jobs/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/jobs" for ::1 at 2016-02-22 09:43:26 -0800
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xFxDjiPXXVx2063sloqNQctTPY+DGHdUqwSw+m9CHN6mN6sPMS1kXyuOxe2NVEYJfsqW1vWbATtE+xPrPbpnuQ==", "job"=>{"company"=>"Stark Industries", "title"=>"Rick Ro$$", "location"=>"Sf", "url"=>"www.espn.com", "discovery"=>"The newspaper", "interest_level"=>"5", "notes"=>"Seems like a cool gig."}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Unpermitted parameter: discovery
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jobs" ("company", "title", "location", "url", "interest_level", "notes", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["company", "Stark Industries"], ["title", "Rick Ro$$"], ["location", "Sf"], ["url", "www.espn.com"], ["interest_level", 5], ["notes", "Seems like a cool gig."], ["user_id", 13], ["created_at", "2016-02-22 17:43:26.331163"], ["updated_at", "2016-02-22 17:43:26.331163"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "status", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Apply"], ["status", "f"], ["job_id", 13], ["created_at", "2016-02-22 17:43:26.332608"], ["updated_at", "2016-02-22 17:43:26.332608"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "status", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Email"], ["status", "f"], ["job_id", 13], ["created_at", "2016-02-22 17:43:26.333604"], ["updated_at", "2016-02-22 17:43:26.333604"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "status", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Interview"], ["status", "f"], ["job_id", 13], ["created_at", "2016-02-22 17:43:26.334332"], ["updated_at", "2016-02-22 17:43:26.334332"]]
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/13/edit_milestones
+Completed 302 Found in 20ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/jobs/13/edit_milestones" for ::1 at 2016-02-22 09:43:26 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "13"]]
+  [1m[36mMilestone Load (0.3ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 13]]
+  Rendered milestones/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/jobs/13" for ::1 at 2016-02-22 09:43:33 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wLGrTXkCgqx1MXrG8eXBD3BpDVGrkunU7frulwOAEiCi2kPMa/i7ryhsEsfqOwpHxfCmCN0Rn7sCBU2GUXhpRw==", "job"=>{"job_id"=>"13", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"743"}, "1"=>{"title"=>"Email", "id"=>"744"}, "2"=>{"title"=>"Fly", "id"=>"745"}}}, "commit"=>"Submit", "id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Unpermitted parameter: job_id
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1 AND "milestones"."id" IN (743, 744, 745)  [["job_id", 13]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "milestones" SET "title" = $1, "updated_at" = $2 WHERE "milestones"."id" = $3[0m  [["title", "Fly"], ["updated_at", "2016-02-22 17:43:33.451021"], ["id", 745]]
+  [1m[35m (6.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/13
+Completed 302 Found in 12ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/jobs/13" for ::1 at 2016-02-22 09:43:33 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 13]]
+  Rendered jobs/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/13" for ::1 at 2016-02-22 09:45:20 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mMilestone Load (0.4ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 13]]
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/application.self-5f92ae343c095ee025bedad634bf13611b89fa1872f702264ff81775a7536601.css?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 09:45:21 -0800
+
+
+Started GET "/jobs/13" for ::1 at 2016-02-22 09:45:27 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mMilestone Load (0.1ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 13]]
+  Rendered jobs/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/application.self-5f92ae343c095ee025bedad634bf13611b89fa1872f702264ff81775a7536601.css?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 09:45:27 -0800
+
+
+Started GET "/jobs/13" for ::1 at 2016-02-22 09:45:53 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mMilestone Load (0.1ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1[0m  [["job_id", 13]]
+  Rendered jobs/show.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/application.self-5f92ae343c095ee025bedad634bf13611b89fa1872f702264ff81775a7536601.css?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 09:45:54 -0800
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-02-22 09:48:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Rao/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.9ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.9ms)

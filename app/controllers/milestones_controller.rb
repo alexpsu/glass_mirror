@@ -35,7 +35,7 @@ class MilestonesController < ApplicationController
     end
 
     def job_params
-      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes)
+      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes, milestones_attributes: [:title])
     end
 
 end
