@@ -4,13 +4,13 @@
     <h2 class="form-group accent-text title">Milestones</h2>
     <%= f.hidden_field :job_id, :value => current_job[:id] %>
     <div class="form-group">
-        <%= f.label :title, "title", class: "control-label" %>
-        <%= f.text_field :title, class: "form-control accent-text" %>
-      <% end %>
+      <%= f.label :title, "Title", class: "control-label" %>
+      <%= f.text_field :title, class: "form-control accent-text" %>
     </div>
     <div class="form-group">
       <%= f.submit "Submit", class: "btn btn-default form-control" %>
     </div>
+
   <% end %>
 
 </div>

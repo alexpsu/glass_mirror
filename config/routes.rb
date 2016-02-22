@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   delete "/jobs/:id", to: "jobs#destroy"
 
   #Routes CRUD milestones
-  # get "/jobs/:id/milestones", to: "milestones#new", as: "new_milestone"
-  post '/milestones/:id', to:'milestones#create'
+  get "/jobs/:id/new_milestone", to: "milestones#new", as: "new_milestone"
+  post '/milestones', to:'milestones#create'
   get "/jobs/:id/edit_milestones", to: "milestones#edit", as: "edit_milestones"
   patch "/jobs/:id/milestones", to: "milestones#update"
 
