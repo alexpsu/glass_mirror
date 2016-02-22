@@ -15,7 +15,7 @@ class JobsController < ApplicationController
     #Adds milestones to job
     milestone_title = ["Apply", "Email", "Interview"]
     milestone_title.each do |mil_title|
-      milestone = Milestone.new({title: mil_title, status: false})
+      milestone = Milestone.new({title: mil_title})
       @job.milestones << milestone
     end
 

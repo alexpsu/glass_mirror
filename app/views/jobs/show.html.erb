@@ -9,7 +9,7 @@
 
   <div class="col-lg-4 pull-left job-info">
     <h3 class="inline">Job Info</h3>
-    <div class="inline pull-right icon">
+    <div class="inline pull-right icon-job">
       <%= link_to "", edit_job_path(@job.id), class: 'glyphicon glyphicon-pencil' %>
       <%= link_to "", @job, method: :delete, class: 'glyphicon glyphicon-remove' %>
     </div>
@@ -24,7 +24,7 @@
         <br>
       <% end %>
       <% if @job.url? %>
-        <h5 class="sec-text inline">Link - </h5><h5 class="accent-text inline"><a href=http://<%= @job.url %>><%= @job.url %></a></h5>
+        <h5 class="accent-text inline"><a href=<%= @job.url %>>Link to Application</a></h5>
         <br>
       <% end %>
       <% if @job.discovery? %>
@@ -39,7 +39,7 @@
 
   <div class="col-lg-4 pull-right job-info">
     <h3 class="inline">Milestones</h3>
-    <div class="inline pull-right icon">
+    <div class="inline pull-right icon-job">
       <%= link_to "", new_milestone_path, class: 'glyphicon glyphicon-plus' %>
       <%= link_to "", edit_milestones_path(@job), class: 'glyphicon glyphicon-pencil' %>
     </div>
@@ -48,6 +48,9 @@
       <% @job.sort_mil().each do |milestone| %>
         <%= check_box_tag :status, milestone.status %>
         <h5 class="accent-text inline"><%= milestone.title %></h5>
+        <div class="pull-right icon-job">
+          <%= link_to "", delete_milestone_path(milestone), method: :delete, class: 'glyphicon glyphicon-remove icon-job pull-right' %>
+        </div>
         <br />
       <% end %>
     </div>

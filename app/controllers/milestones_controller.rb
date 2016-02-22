@@ -19,13 +19,23 @@ class MilestonesController < ApplicationController
   def edit
     set_job
     unless current_user == @job.user
-      redirect_to user_path(@user)
-      flash[:notice] = "You can't edit that user"
+      flash[:notice] = "You can't edit that job"
     end
+  end
+
+  def destroy
+    set_mil
+    @milestone.destroy
+    flash[:notice] = "Successfully deleted milestone #{@milestone.title}"
+    redirect_to job_path(@milestone.job)
   end
 
 
   private
+    def set_mil
+      @milestone = Milestone.find(params[:id])
+    end
+
     def set_job
       @job = Job.find(params[:id])
     end

@@ -1,7 +1,7 @@
 class Milestone < ActiveRecord::Base
   belongs_to :job
 
-  # def initialize(args)
-  #   @status = true
-  # end
+  def initialize
+    @status = true
+  end
 end
