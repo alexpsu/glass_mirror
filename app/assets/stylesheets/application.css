@@ -17,8 +17,8 @@
 }
 
 .job-info {
-  align-items: left;
   align-content: left;
+  background-color: #F5FAFE;
 }
 
 .inline {
@@ -35,7 +35,7 @@
 .job-container {
   margin-top: 3%;
   padding: 1%;
-  width: 70%;
+  width: 60%;
 }
 
 .form-horizontal {

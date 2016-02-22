@@ -2,32 +2,54 @@
   <%= link_to 'Back', root_path, class:"btn btn-default pull-left" %>
 </div>
 <div class="container text-center">
-    <h2 class="title inline"><%= @job.title %></h2><h3 class="inline">&nbspat&nbsp</h3><h2 class="title inline"><%= @job.company %></h2>
+    <h2 class="title inline"><%= @job.title %></h2><h2 class="inline">&nbspat&nbsp</h2><h2 class="title inline"><%= @job.company %></h2>
 </div>
 
-<div class="job-container center-block">
+<div class="job-container container center-block">
 
-  <div class="col-lg-4 col-md-12 pull-left">
-    <h3>Job Info</h3>
+  <div class="col-lg-4 pull-left job-info">
+    <h3 class="inline">Job Info</h3>
+    <div class="inline pull-right icon">
+      <%= link_to "", edit_job_path(@job.id), class: 'glyphicon glyphicon-pencil' %>
+      <%= link_to "", @job, method: :delete, class: 'glyphicon glyphicon-remove' %>
+    </div>
     <hr>
     <div class="job-info">
-      <h5 class="sec-text inline">Interest Level - </h5><h5 class="accent-text inline"><%= @job.interest_level %></h5>
-      <br>
-      <h5 class="sec-text inline">Location - </h5><h5 class="accent-text inline"><%= @job.location %></h5>
-      <br>
-      <h5 class="sec-text inline">Link - </h5><h5 class="accent-text inline"><a href=http://<%= @job.url %>><%= @job.url %></a></h5>
-      <br>
-      <h5 class="sec-text inline">Found at - </h5><h5 class="accent-text inline"><%= @job.discovery %></h5>
-      <br>
-      <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"><%= @job.notes %></h5>
+      <% if @job.interest_level? %>
+        <h5 class="sec-text inline">Interest Level - </h5><h5 class="accent-text inline"><%= @job.interest_level %></h5>
+        <br>
+      <% end %>
+      <% if @job.location? %>
+        <h5 class="sec-text inline">Location - </h5><h5 class="accent-text inline"><%= @job.location %></h5>
+        <br>
+      <% end %>
+      <% if @job.url? %>
+        <h5 class="sec-text inline">Link - </h5><h5 class="accent-text inline"><a href=http://<%= @job.url %>><%= @job.url %></a></h5>
+        <br>
+      <% end %>
+      <% if @job.discovery? %>
+        <h5 class="sec-text inline">Found at - </h5><h5 class="accent-text inline"><%= @job.discovery %></h5>
+        <br>
+      <% end %>
+      <% if @job.notes? %>
+        <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"><%= @job.notes %></h5>
+      <% end %>
     </div>
   </div>
 
-  <div class="col-lg-4 col-md-12 rm-padding-md pull-right">
-    <% @job.milestones.each do |milestone| %>
-      <%= milestone.title %>
-      <%= check_box_tag :status, milestone.status %>
-    <% end %>
+  <div class="col-lg-4 pull-right job-info">
+    <h3 class="inline">Milestones</h3>
+    <div class="inline pull-right icon">
+      <%= link_to "", edit_milestones_path(@job), class: 'glyphicon glyphicon-pencil' %>
+    </div>
+    <hr>
+    <div class="job-info">
+      <% @job.sort_mil().each do |milestone| %>
+        <%= check_box_tag :status, milestone.status %>
+        <h5 class="accent-text inline"><%= milestone.title %></h5>
+        <br />
+      <% end %>
+    </div>
   </div>
 
 </div>
