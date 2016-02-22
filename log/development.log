@@ -48244,3 +48244,332 @@ ArgumentError (wrong number of arguments (1 for 0)):
   Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/Rao/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (73.0ms)
+  [1m[36m (31.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160219193058)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (28.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "interest" text[] DEFAULT '{}', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160219193058"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJobs (20160221005712)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (15.1ms)[0m  [1mCREATE TABLE "jobs" ("id" serial primary key, "company" character varying, "title" character varying, "location" character varying, "url" character varying, "discovery" character varying, "interest_level" integer, "notes" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160221005712"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMilestones (20160221010110)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMilestones (20160221010110)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (16.5ms)[0m  [1mCREATE TABLE "milestones" ("id" serial primary key, "title" character varying, "status" boolean DEFAULT 'f', "job_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160221010110"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddUserReferenceToJobs (20160221010816)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "jobs" ADD "user_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_jobs_on_user_id" ON "jobs"  ("user_id")
+  [1m[36m (2.2ms)[0m  [1mALTER TABLE "jobs" ADD CONSTRAINT "fk_rails_df6238c8a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160221010816"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'jobs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'milestones'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-02-22 15:10:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SplashController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered splash/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 302ms (Views: 278.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/jobs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/milestones.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/scaffolds.self-78d0c48df03e5a0f1c2bfbecc169c047d93c0c32289c253ba5890c7aa57bea42.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/splash.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/application.self-5993ba3454aa92420f437b3feb462acae785e03c3f3c65596c916d5eff9f466e.css?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/jobs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/milestones.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/splash.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:10:12 -0800
+
+
+Started GET "/signup" for ::1 at 2016-02-22 15:10:14 -0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered users/_form.html.erb (23.5ms)
+  Rendered users/new.html.erb within layouts/application (28.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for ::1 at 2016-02-22 15:10:54 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lSjFv+egMpN8XjyhfRI/YgQqk68z4pdTZYvk64IncOr3Qy0+9VoLkCEDVKBmzPQqsbM49kVh4TyKdEf60N8LjQ==", "user"=>{"first_name"=>"Alex", "last_name"=>"Rao", "email"=>"alexrao17@gmail.com", "password"=>"[FILTERED]", "interest"=>"ME, SE"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "interest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Alex"], ["last_name", "Rao"], ["email", "alexrao17@gmail.com"], ["password_digest", "$2a$10$vx4g1KXcL2i3.vlp8l1gIezS2mWbjyqG6Iekzg84B0ZVrIzexAmGi"], ["interest", "{ME,\" SE\"}"], ["created_at", "2016-02-22 23:10:54.854424"], ["updated_at", "2016-02-22 23:10:54.854424"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 78ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-22 15:10:54 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (24.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/jobs" for ::1 at 2016-02-22 15:11:05 -0800
+Processing by JobsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered jobs/_form.html.erb (5.9ms)
+  Rendered jobs/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/jobs" for ::1 at 2016-02-22 15:17:06 -0800
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w135p3ph1vywHFWGT/O5U2yLblzHMTZu+RbM45C4LC6hNhEmaJvv/+1BPYdULXIb2RLFBbGyQAEW6W/ywkBXSQ==", "job"=>{"company"=>"Stark Industries", "title"=>"Rick Ro$$ Bo$$", "location"=>"Marvel's sweet plane", "url"=>"https://en.wikipedia.org/wiki/Stark_Industries", "discovery"=>"They have a ton of movies", "interest_level"=>"5", "notes"=>"Seems like a sweet gig."}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: discovery
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "jobs" ("company", "title", "location", "url", "interest_level", "notes", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["company", "Stark Industries"], ["title", "Rick Ro$$ Bo$$"], ["location", "Marvel's sweet plane"], ["url", "https://en.wikipedia.org/wiki/Stark_Industries"], ["interest_level", 5], ["notes", "Seems like a sweet gig."], ["user_id", 1], ["created_at", "2016-02-22 23:17:06.942835"], ["updated_at", "2016-02-22 23:17:06.942835"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Apply"], ["job_id", 1], ["created_at", "2016-02-22 23:17:06.944518"], ["updated_at", "2016-02-22 23:17:06.944518"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Email"], ["job_id", 1], ["created_at", "2016-02-22 23:17:06.945553"], ["updated_at", "2016-02-22 23:17:06.945553"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Interview"], ["job_id", 1], ["created_at", "2016-02-22 23:17:06.946228"], ["updated_at", "2016-02-22 23:17:06.946228"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/1/edit_milestones
+Completed 302 Found in 24ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/jobs/1/edit_milestones" for ::1 at 2016-02-22 15:17:06 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMilestone Load (0.1ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 1]]
+  Rendered milestones/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/1" for ::1 at 2016-02-22 15:17:09 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1KmJn6OtVSCxzPcNo0o5Ih8yKdDnt6QNyIBtWG2jLbO2wmEesVdsI+yRnwy4lPJqqquCiZE00mInf85JP1tW1A==", "job"=>{"job_id"=>"1", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"1"}, "1"=>{"title"=>"Email", "id"=>"2"}, "2"=>{"title"=>"Interview", "id"=>"3"}}}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mMilestone Load (0.2ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1 AND "milestones"."id" IN (1, 2, 3)[0m  [["job_id", 1]]
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/1" for ::1 at 2016-02-22 15:17:09 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMilestone Load (0.2ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  ORDER BY "milestones"."id" ASC  [["job_id", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/1/new_milestone" for ::1 at 2016-02-22 15:17:13 -0800
+Processing by MilestonesController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered milestones/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/milestones" for ::1 at 2016-02-22 15:17:17 -0800
+Processing by MilestonesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AnRrInHkcSV3MjkgSXQz0dBaDuiudBeYQbGUqS5mddlgH4OjYx5IJipvUSFSqviZZcOlsdj3YfeuTje4fJ4Ovg==", "milestone"=>{"job_id"=>"1", "title"=>"Become a super hero"}, "commit"=>"Submit"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Become a super hero"], ["job_id", 1], ["created_at", "2016-02-22 23:17:17.662870"], ["updated_at", "2016-02-22 23:17:17.662870"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 10ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/jobs/1" for ::1 at 2016-02-22 15:17:17 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mMilestone Load (0.1ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  ORDER BY "milestones"."id" ASC[0m  [["job_id", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1/new_milestone" for ::1 at 2016-02-22 15:17:18 -0800
+Processing by MilestonesController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered milestones/new.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/milestones" for ::1 at 2016-02-22 15:17:21 -0800
+Processing by MilestonesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hp1Wu149rkO1TJCgGUHqE1MLPr9jgLSuYEwBWeuE8Gx89r46TMeXQOgR+KECnyFb5pKV5hUDwsGPs6JIuXyLCw==", "milestone"=>{"job_id"=>"1", "title"=>"Kill the evil guy"}, "commit"=>"Submit"}
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "milestones" ("title", "job_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Kill the evil guy"], ["job_id", 1], ["created_at", "2016-02-22 23:17:21.846167"], ["updated_at", "2016-02-22 23:17:21.846167"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 12ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/jobs/1" for ::1 at 2016-02-22 15:17:21 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMilestone Load (0.3ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  ORDER BY "milestones"."id" ASC  [["job_id", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.6ms)
+  [1m[36mMilestone Load (0.4ms)[0m  [1mSELECT  "milestones".* FROM "milestones"  ORDER BY "milestones"."id" ASC LIMIT 1[0m
+
+
+Started GET "/jobs/1/edit_milestones" for ::1 at 2016-02-22 15:20:44 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMilestone Load (0.1ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 1]]
+  Rendered milestones/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/1" for ::1 at 2016-02-22 15:20:53 -0800
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+30LN6gXQR5HtFdiKvYqw2ksS911pLC3ERHrlGCI7ZWZFuO2uu14HRrpP2MxKOGL3LXghAMnxtj+7kiFMnCW8g==", "job"=>{"job_id"=>"1", "milestones_attributes"=>{"0"=>{"title"=>"Apply", "id"=>"1"}, "1"=>{"title"=>"Email", "id"=>"2"}, "2"=>{"title"=>"Interview", "id"=>"3"}, "3"=>{"title"=>"Become a super hero", "id"=>"4"}, "4"=>{"title"=>"Kill the evil guy", "id"=>"5"}}}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: job_id
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mMilestone Load (0.2ms)[0m  [1mSELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1 AND "milestones"."id" IN (1, 2, 3, 4, 5)[0m  [["job_id", 1]]
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1" for ::1 at 2016-02-22 15:20:53 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mMilestone Load (0.3ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  ORDER BY "milestones"."id" ASC  [["job_id", 1]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/1/edit_milestones" for ::1 at 2016-02-22 15:22:09 -0800
+Processing by MilestonesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mMilestone Load (0.1ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 1]]
+  Rendered milestones/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)

@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20160221010816) do
 
   create_table "milestones", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "status"
+    t.boolean  "status",     default: false
     t.integer  "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
