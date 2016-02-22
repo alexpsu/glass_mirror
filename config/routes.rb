@@ -27,8 +27,10 @@ Rails.application.routes.draw do
   delete "/jobs/:id", to: "jobs#destroy"
 
   #Routes CRUD milestones
-  get "/jobs/:id/milestones", to: "milestones#new", as: "new_milestone"
-  post '/milestones', to:'milestones#create'
+  # get "/jobs/:id/milestones", to: "milestones#new", as: "new_milestone"
+  post '/milestones/:id', to:'milestones#create'
+  get "/jobs/:id/milestones", to: "milestones#edit", as: "edit_milestone"
+  patch "/jobs/:job_id/milestones/:id", to: "milestones#update"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"
