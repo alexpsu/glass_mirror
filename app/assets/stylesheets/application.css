@@ -16,6 +16,10 @@
   padding-top: 1%;
 }
 
+.inline {
+  display: inline-block;
+}
+
 .btn-add {
   background: white;
   color: #2199E2;

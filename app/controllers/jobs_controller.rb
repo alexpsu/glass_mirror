@@ -21,7 +21,7 @@ class JobsController < ApplicationController
     current_user.jobs << @job
     if @job.save
       flash[:notice] = "Successfully created job"
-      redirect_to job_path(@job)
+      redirect_to edit_milestones_path(@job)
     else
       flash[:error] = @job.errors.full_messages.join(", ")
       redirect_to new_job_path
@@ -71,6 +71,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes)
+      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes, milestones_attributes: [:title])
     end
 end

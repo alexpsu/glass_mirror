@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   # get "/jobs/:id/milestones", to: "milestones#new", as: "new_milestone"
   post '/milestones/:id', to:'milestones#create'
   get "/jobs/:id/edit_milestones", to: "milestones#edit", as: "edit_milestones"
-  patch "/jobs/:job_id/milestones/:id", to: "milestones#update"
+  patch "/jobs/:job_id/milestones", to: "milestones#update"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"
