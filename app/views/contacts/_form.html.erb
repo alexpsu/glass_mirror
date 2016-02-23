@@ -7,6 +7,7 @@
     <% else %>
       <h2 class="form-group accent-text title">Add Contact</h2>
     <% end %>
+    <%= f.hidden_field :job_id, :value => current_job[:id] %>
     <div class="form-group">
       <%= f.label :name, "Name", class: "control-label" %>
       <%= f.text_field :name, :required => true, class: "form-control accent-text" %>
