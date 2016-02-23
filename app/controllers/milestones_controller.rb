@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
 
   def create
     job = Job.find_by_id(milestone_params[:job_id])
-    @milestone = Milestone.new(title: milestone_params[:title], status: false)
+    @milestone = Milestone.new(title: milestone_params[:title])
     job.milestones << @milestone
     if @milestone.save
       flash[:notice] = "Successfully created milestone"

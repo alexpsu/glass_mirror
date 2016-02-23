@@ -45,8 +45,9 @@
     </div>
     <hr>
     <div class="job-info">
-      <% @job.sort_mil().each do |milestone| %>
-        <%= check_box_tag :status, milestone.status %>
+      <% @milestones.each do |milestone| %>
+      <strong><%=milestone.status %></strong>
+        <%= check_box_tag "milestone", "status", milestone.status, disabled: true %>
         <h5 class="accent-text inline"><%= milestone.title %></h5>
         <div class="pull-right icon-job">
           <%= link_to "", delete_milestone_path(milestone), method: :delete, class: 'glyphicon glyphicon-remove icon-job pull-right' %>
@@ -55,5 +56,4 @@
       <% end %>
     </div>
   </div>
-
 </div>

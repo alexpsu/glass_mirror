@@ -12,6 +12,16 @@
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 
+#mil-title-form {
+  width: 60%;
+}
+
+#mil-status-form {
+  width: 5%;
+  margin-right: 14%;
+  margin-top: 2%
+}
+
 .icon {
   padding-top: 1%;
 }

@@ -1,12 +1,13 @@
 <div class="container">
-
   <%= form_for @job, :html => {:class => "form-horizontal center-block"} do |f| %>
     <h2 class="form-group accent-text title">Milestones</h2>
     <%= f.hidden_field :job_id, :value => current_job[:id] %>
     <div class="form-group">
+      <h4 class="pull-left inline">Milestone Title</h4>
+      <h4 class="pull-right inline">Accomplished?</h4>
       <%= f.fields_for :milestones do |ff| %>
-        <%= ff.label :title, "title", class: "control-label" %>
-        <%= ff.text_field :title, class: "form-control accent-text" %>
+        <%= ff.text_field :title, class: "form-control accent-text inline pull-left", id: "mil-title-form" %>
+        <%= ff.check_box :status, class: "inline pull-right", id: "mil-status-form" %>
       <% end %>
     </div>
     <div class="form-group">

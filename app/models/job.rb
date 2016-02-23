@@ -5,6 +5,6 @@ class Job < ActiveRecord::Base
 
 
   def sort_mil
-    self.milestones.order(:id)
+    self.milestones.sort {|a, b| a.id <=> b.id}
   end
 end
