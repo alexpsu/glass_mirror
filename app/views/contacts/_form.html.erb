@@ -1,0 +1,35 @@
+<div class="container">
+  <%= link_to 'Back', job_path(current_job), class:"btn btn-default pull-left" %>
+
+  <%= form_for @contact, :html => {:class => "form-horizontal center-block"} do |f| %>
+    <% if @contact.job == current_job %>
+      <h2 class="form-group accent-text title">Edit Contact</h2>
+    <% else %>
+      <h2 class="form-group accent-text title">Add Contact</h2>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :name, "Name", class: "control-label" %>
+      <%= f.text_field :name, :required => true, class: "form-control accent-text" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "Email", class: "control-label" %>
+      <%= f.text_field :email, :required => true, class: "form-control accent-text" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone, "Phone Number", class: "control-label" %>
+      <%= f.text_field :phone, class: "form-control accent-text" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :web, "Linkedin", class: "control-label" %>
+      <%= f.text_field :web, class: "form-control accent-text" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :notes, "Notes", class: "control-label" %>
+      <%= f.text_area :notes, class: "form-control accent-text" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Submit", class: "btn btn-default form-control" %>
+    </div>
+  <% end %>
+
+</div>

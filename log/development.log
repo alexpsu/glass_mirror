@@ -58539,3 +58539,61 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+
+
+Started GET "/users/1/jobs" for ::1 at 2016-02-22 18:35:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JobsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered jobs/_form.html.erb (25.2ms)
+  Rendered jobs/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 556ms (Views: 509.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 18:35:35 -0800
+
+
+Started GET "/assets/contacts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 18:35:35 -0800
+
+
+Started GET "/users/1" for ::1 at 2016-02-22 18:35:36 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJob Load (0.4ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (28.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs/1/edit" for ::1 at 2016-02-22 18:35:38 -0800
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered jobs/_form.html.erb (2.2ms)
+  Rendered jobs/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-02-22 18:35:39 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/2" for ::1 at 2016-02-22 18:35:45 -0800
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mMilestone Load (0.4ms)[0m  SELECT "milestones".* FROM "milestones" WHERE "milestones"."job_id" = $1  [["job_id", 2]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 39ms (Views: 29.3ms | ActiveRecord: 1.8ms)
