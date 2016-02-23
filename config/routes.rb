@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'contacts/new'
+
+  get 'contacts/edit'
+
   get 'milestones/new'
 
   get 'jobs/show'
