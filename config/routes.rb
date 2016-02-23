@@ -28,11 +28,12 @@ Rails.application.routes.draw do
   delete "/milestones/:id", to: "milestones#destroy", as: "delete_milestone"
 
   #Routes Crud contacts
-  get "/jobs/:id/contacts/new", to: "contacts#new", as: "new_contacts"
+  get "/contacts/:id", to: "contacts#show", as: "contact"
+  get "/jobs/:id/contacts/new", to: "contacts#new", as: "new_contact"
   post "/contacts", to: "contacts#create"
-  get "/jobs/:job_id/contacts/:id/edit", to: "contacts#edit", as: "edit_contacts"
-  patch "/jobs/:job_id/contacts/:id", to: "contacts#update"
-  delete "/contacts/:id", to: "contacts#destroy"
+  get "/contacts/:id/edit", to: "contacts#edit", as: "edit_contact"
+  patch "/contacts/:id", to: "contacts#update"
+  delete "/contacts/:id", to: "contacts#destroy", as: "delete_contact"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"

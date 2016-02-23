@@ -4,13 +4,12 @@
 
 /*
  * ...
- *
- *= require bootstrap-3.3.6.min
  *= require_tree .
  *= require_self
  */
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
 
 #mil-title-form {
   width: 60%;
@@ -30,21 +29,40 @@
   padding-top: 3%;
 }
 
+.hr {
+  margin: 4px 0px 4px 0px;
+}
+
 #mil-info {
-  align-content: left;
   background-color: #F5FAFE;
-  width: 40%;
+  width: 99%;
 }
 
 #job-info {
-  align-content: left;
   background-color: #F5FAFE;
-  width: 45%;
+  width: 99%;
+  margin-bottom: 0%;
+}
+
+#contact-info {
+  background-color: #F5FAFE;
+  width: 99%;
+  margin-top: 4%;
+}
+
+.job-container {
+  margin-top: 3%;
+  padding: 1%;
+  width: 60%;
 }
 
 .sub-title {
   margin-top: 1%;
   margin-bottom: 0%;
+}
+
+.panel-heading {
+  padding: 0px 2px 0px 10px;
 }
 
 .inline {
@@ -56,12 +74,6 @@
   color: #2199E2;
   border: solid 1px #2199E2;
   font-weight: 600;
-}
-
-.job-container {
-  margin-top: 3%;
-  padding: 1%;
-  width: 60%;
 }
 
 .form-horizontal {

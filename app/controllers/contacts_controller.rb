@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     #check if you need this because it might use the id when it makes a new one
-    @job = Job.find(contactparams[:job_id])
+    @job = Job.find(contact_params[:job_id])
     #you need it for the redirect though or could do contact.job
     @job.contacts << @contact
 

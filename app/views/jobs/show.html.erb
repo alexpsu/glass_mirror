@@ -5,52 +5,103 @@
     <h2 class="title inline"><%= @job.title %></h2><h2 class="inline">&nbspat&nbsp</h2><h2 class="title inline"><%= @job.company %></h2>
 </div>
 
-<div class="job-container container center-block">
+<div class="container job-container">
 
-  <div class="col-lg-4 pull-left" id="job-info">
-    <h3 class="inline sub-title">Job Info</h3>
-    <div class="inline pull-right icon-job">
-      <%= link_to "", edit_job_path(@job.id), class: 'glyphicon glyphicon-pencil' %>
-      <%= link_to "", @job, method: :delete, class: 'glyphicon glyphicon-remove' %>
-    </div>
-    <hr>
-    <div class="">
-      <% if @job.interest_level? %>
-        <h5 class="sec-text inline">Interest Level - </h5><h5 class="accent-text inline"><%= @job.interest_level %></h5>
-        <br>
-      <% end %>
-      <% if @job.location? %>
-        <h5 class="sec-text inline">Location - </h5><h5 class="accent-text inline"><%= @job.location %></h5>
-        <br>
-      <% end %>
-      <% if @job.url? %>
-        <h5 class="accent-text inline"><a href=<%= @job.url %>>Link to Application</a></h5>
-        <br>
-      <% end %>
-      <% if @job.discovery? %>
-        <h5 class="sec-text inline">Found at - </h5><h5 class="accent-text inline"><%= @job.discovery %></h5>
-        <br>
-      <% end %>
-      <% if @job.notes? %>
-        <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"><%= @job.notes %></h5>
-      <% end %>
-    </div>
-  </div>
+  <div class="col-md-6 container center-block">
 
-  <div class="col-lg-4 pull-right" id="mil-info">
-    <h3 class="inline sub-title">Milestones</h3>
-    <div class="inline pull-right icon-job">
-      <%= link_to "", new_milestone_path, class: 'glyphicon glyphicon-plus' %>
-      <%= link_to "", edit_milestones_path(@job), class: 'glyphicon glyphicon-pencil' %>
-    </div>
-    <hr>
-    <% @milestones.each do |milestone| %>
-      <%= check_box_tag "milestone", "status", milestone.status, disabled: true %>
-      <h5 class="accent-text inline"><%= milestone.title %></h5>
-      <div class="pull-right icon-job">
-        <%= link_to "", delete_milestone_path(milestone), method: :delete, class: 'glyphicon glyphicon-remove icon-job pull-right' %>
+    <div class="col-s-6 well" id="job-info">
+      <h3 class="inline sub-title">Job Info</h3>
+      <div class="inline pull-right icon-job">
+        <%= link_to "", edit_job_path(@job.id), class: 'glyphicon glyphicon-pencil' %>
+        <%= link_to "", @job, method: :delete, class: 'glyphicon glyphicon-remove' %>
       </div>
-      <br />
-    <% end %>
+      <hr class="hr">
+        <% if @job.interest_level? %>
+          <h5 class="sec-text inline">Interest Level - </h5><h5 class="accent-text inline"><%= @job.interest_level %></h5>
+          <br>
+        <% end %>
+        <% if @job.location? %>
+          <h5 class="sec-text inline">Location - </h5><h5 class="accent-text inline"><%= @job.location %></h5>
+          <br>
+        <% end %>
+        <% if @job.url? %>
+          <h5 class="accent-text inline"><a href=<%= @job.url %>>Link to Application</a></h5>
+          <br>
+        <% end %>
+        <% if @job.discovery? %>
+          <h5 class="sec-text inline">Found at - </h5><h5 class="accent-text inline"><%= @job.discovery %></h5>
+          <br>
+        <% end %>
+        <% if @job.notes? %>
+          <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"><%= @job.notes %></h5>
+        <% end %>
+    </div>
+
+    <div class="col-s-6 well" id="contact-info">
+      <h3 class="inline sub-title">Contact Info</h3>
+      <div class="inline pull-right icon-job">
+        <%= link_to "", new_contact_path, class: 'glyphicon glyphicon-plus' %>
+      </div>
+      <hr class="hr">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <% @job.contacts.each do |contact| %>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading<%= contact.id %>">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= contact.id %>" aria-expanded="false" aria-controls="collapseOne">
+                <h5 class="accent-text inline"><%= contact.name %>'s </h5><h5 class="sec-text inline">&nbspInfo</h5>
+              </a>
+            </h4>
+          </div>
+          <div id="collapse<%= contact.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= contact.id %>">
+            <div class="panel-body">
+              <% if contact.email? %>
+                <h5 class="sec-text inline">Email - </h5><h5 class="accent-text inline"> <%= contact.email %></h5>
+                <br>
+              <% end %>
+              <% if contact.phone? %>
+                <h5 class="sec-text inline">Phone Number - </h5><h5 class="accent-text inline"> <%= contact.phone %></h5>
+                <br>
+              <% end %>
+              <% if contact.web? %>
+                <h5 class="sec-text inline">Website - </h5><h5 class="accent-text inline"> <%= contact.web %></h5>
+                <br>
+              <% end %>
+              <% if contact.notes? %>
+                <h5 class="sec-text inline">Notes - </h5><h5 class="accent-text inline"> <%= contact.notes %></h5>
+              <% end %>
+              <div class="inline pull-right icon-job">
+                <%= link_to "", edit_contact_path(contact), class: 'glyphicon glyphicon-pencil' %>
+                <%= link_to "", delete_contact_path(contact), method: :delete, class: 'glyphicon glyphicon-remove' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+
   </div>
+
+  <div class="col-md-6 container center-block">
+
+    <div class="col-lg-4 pull-right well" id="mil-info">
+      <h3 class="inline sub-title">Milestones</h3>
+      <div class="inline pull-right icon-job">
+        <%= link_to "", new_milestone_path, class: 'glyphicon glyphicon-plus' %>
+        <%= link_to "", edit_milestones_path(@job), class: 'glyphicon glyphicon-pencil' %>
+      </div>
+      <hr class="hr">
+      <% @milestones.each do |milestone| %>
+        <%= check_box_tag "milestone", "status", milestone.status, disabled: true %>
+        <h5 class="accent-text inline"><%= milestone.title %></h5>
+        <div class="pull-right icon-job">
+          <%= link_to "", delete_milestone_path(milestone), method: :delete, class: 'glyphicon glyphicon-remove icon-job pull-right' %>
+        </div>
+        <br />
+      <% end %>
+    </div>
+
+  </div>
+
 </div>
