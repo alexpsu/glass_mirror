@@ -1,7 +1,9 @@
 class ContactsController < ApplicationController
+
   def new
     @contact = Contact.new
   end
+
 
   def create
     @contact = Contact.new(contact_params)
@@ -10,7 +12,7 @@ class ContactsController < ApplicationController
     @job = Job.find(contactparams[:job_id])
     #you need it for the redirect though or could do contact.job
     @job.contacts << @contact
-    
+
     if @contact.save
       flash[:notice] = "Successfully created contact"
       redirect_to job_path(@job)
@@ -20,7 +22,42 @@ class ContactsController < ApplicationController
     end
   end
 
+
   def edit
+    set_contact
+    unless current_user == @contact.job.user
+      redirect_to user_path(@user)
+      flash[:notice] = "You can't edit that user"
+    end
+  end
+
+
+  def update
+    set_contact
+    if current_user == @contact.job.user
+      if @contact.update_attributes(contact_params)
+        flash[:notice] = "Successfully updated contact info"
+        redirect_to job_path(@contact.job)
+      else
+        flash[:error] = @contact.error.full_messages.join(", ")
+        redirect_to edit_contact_path(@contact)
+      end
+    else
+      redirect_to user_path(current_user)
+    end
+  end
+
+
+  def destroy
+    set_contact
+    if current_user == @contact.job.user
+      @contact.destroy
+      flash[:notice] = "Successfully deleted contact #{@contact.name}"
+      redirect_to job_path(@contact.job)
+    else
+      flash[:notice] = "You can't delete that contact."
+      redirect_to user_path(current_user)
+    end
   end
 
 

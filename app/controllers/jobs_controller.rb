@@ -7,9 +7,11 @@ class JobsController < ApplicationController
 
   end
 
+
   def new
     @job = Job.new
   end
+
 
   def create
     @job = Job.new(job_params)
@@ -21,6 +23,7 @@ class JobsController < ApplicationController
       @job.milestones << milestone
     end
 
+
     current_user.jobs << @job
     if @job.save
       flash[:notice] = "Successfully created job"
@@ -31,6 +34,7 @@ class JobsController < ApplicationController
     end
   end
 
+
   def edit
     set_job
     unless current_user == @job.user
@@ -38,6 +42,7 @@ class JobsController < ApplicationController
       flash[:notice] = "You can't edit that user"
     end
   end
+
 
   def update
     set_job
@@ -54,6 +59,7 @@ class JobsController < ApplicationController
     end
   end
 
+
   def destroy
     set_job
     if current_user == @job.user
@@ -65,6 +71,7 @@ class JobsController < ApplicationController
       redirect_to job_path(@job)
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
