@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'contacts/new'
-
-  get 'contacts/edit'
-
-  get 'milestones/new'
-
-  get 'jobs/show'
-
-  get 'jobs/new'
-
-  root to: 'splash#index'
-  get '/about', to: 'splash#show', as: 'about'
+  root to: "splash#index"
+  get "/about", to: "splash#show", as: "about"
 
   #Routes for CRUD for Users
   get "/users", to: "users#index", as: "users"
@@ -25,17 +15,24 @@ Rails.application.routes.draw do
   #Routes CRUD jobs
   get "/jobs/:id", to: "jobs#show", as: "job"
   get "/users/:id/jobs", to: "jobs#new", as: "new_job"
-  post '/jobs', to:'jobs#create'
+  post "/jobs", to:"jobs#create"
   get "/jobs/:id/edit", to: "jobs#edit", as: "edit_job"
   patch "/jobs/:id", to: "jobs#update"
   delete "/jobs/:id", to: "jobs#destroy"
 
   #Routes CRUD milestones
   get "/jobs/:id/new_milestone", to: "milestones#new", as: "new_milestone"
-  post '/milestones', to:'milestones#create'
-  get "/jobs/:id/edit_milestones", to: "milestones#edit", as: "edit_milestones"
+  post "/milestones", to: "milestones#create"
+  get "/jobs/:id/milestones/edit", to: "milestones#edit", as: "edit_milestones"
   patch "/jobs/:id/milestones", to: "milestones#update"
   delete "/milestones/:id", to: "milestones#destroy", as: "delete_milestone"
+
+  #Routes Crud contacts
+  get "/jobs/:id/contacts/new", to: "contacts#new", as: "new_contacts"
+  post "/contacts", to: "contacts#create"
+  get "/jobs/:job_id/contacts/:id/edit", to: "contacts#edit", as: "edit_contacts"
+  patch "/jobs/:job_id/contacts/:id", to: "contacts#update"
+  delete "/contacts/:id", to: "contacts#destroy"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"

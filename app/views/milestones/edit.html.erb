@@ -1,6 +1,7 @@
 <div class="container">
   <%= form_for @job, :html => {:class => "form-horizontal center-block"} do |f| %>
     <h2 class="form-group accent-text title">Milestones</h2>
+    <%= f.hidden_field :job_id, :value => current_job[:id] %>
     <div class="form-group">
       <h4 class="pull-left inline">Milestone Title</h4>
       <h4 class="pull-right inline">Accomplished?</h4>

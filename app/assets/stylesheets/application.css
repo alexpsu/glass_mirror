@@ -27,12 +27,24 @@
 }
 
 .icon-job {
-  padding-top: 4%;
+  padding-top: 3%;
 }
 
-.job-info {
+#mil-info {
   align-content: left;
   background-color: #F5FAFE;
+  width: 40%;
+}
+
+#job-info {
+  align-content: left;
+  background-color: #F5FAFE;
+  width: 45%;
+}
+
+.sub-title {
+  margin-top: 1%;
+  margin-bottom: 0%;
 }
 
 .inline {
