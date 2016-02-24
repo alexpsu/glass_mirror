@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to 'Back', user_path(current_user), class:"btn btn-default pull-left" %>
+  <%= link_to 'Back', user_path(current_user), class:"btn btn-default pull-left btn-back" %>
 
   <%= form_for @job, :html => {:class => "form-horizontal center-block"} do |f| %>
     <% if @job.user == current_user %>

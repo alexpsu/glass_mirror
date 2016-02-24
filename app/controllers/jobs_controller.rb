@@ -37,6 +37,7 @@ class JobsController < ApplicationController
 
   def edit
     set_job
+    @milestone = @job.sort_mil
     unless current_user == @job.user
       redirect_to user_path(@user)
       flash[:notice] = "You can't edit that user"

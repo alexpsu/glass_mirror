@@ -18,9 +18,6 @@ class MilestonesController < ApplicationController
 
   def edit
     set_job
-    unless current_user == @job.user
-      flash[:notice] = "You can't edit that job"
-    end
   end
 
   def destroy

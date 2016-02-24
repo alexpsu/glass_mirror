@@ -29,9 +29,9 @@
       <% @user.jobs.each do |job| %>
         <tr>
           <td>
-            <h4 class="accent-text splash-btn"><%=link_to "#{job.title}", job_path(job.id) %></h4> <h5 class="sec-text splash-btn">at</h5>
-            <h4 class="accent-text splash-btn"><%= job.company %>.</h4> <h5 class="sec-text splash-btn">Last updated</h5>
-            <h5 class="accent-text splash-btn"><%= job.updated_at.strftime("%B %-d") %></h5>
+            <h4 class="accent-text splash-btn"><%=link_to "#{job.title}", job_path(job.id), class: "accent-text" %></h4> <h5 class="sec-text splash-btn">at</h5>
+            <h4 class="accent-text splash-btn"><%= job.company %>.</h4> <h5 class="sec-text splash-btn">Last Milestone</h5>
+            <h5 class="accent-text splash-btn"><%= job.find_last.title %> <%= time_ago_in_words(job.find_last.updated_at) %> ago</h5>
             <div class="pull-right icon">
               <%= link_to "", edit_job_path(job.id), class: 'glyphicon glyphicon-pencil' %>
               <%= link_to "", job, method: :delete, class: 'glyphicon glyphicon-remove' %>

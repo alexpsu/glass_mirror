@@ -11,14 +11,28 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
 
+
+.accent-text {
+  color: #1A237E;
+}
+
+.sec-text {
+  color: #757575;
+}
+
+.accent-text:visited {
+  color: #1A237E;
+}
+
 #mil-title-form {
   width: 60%;
+  margin-bottom: 2%;
 }
 
 #mil-status-form {
   width: 5%;
   margin-right: 14%;
-  margin-top: 2%
+  margin-top: 3%
 }
 
 .icon {
@@ -35,7 +49,7 @@
 
 #mil-info {
   background-color: #F5FAFE;
-  width: 99%;
+  width: 90%;
 }
 
 #job-info {
@@ -50,10 +64,16 @@
   margin-top: 4%;
 }
 
+.show-container {
+  margin-top: 3%;
+  padding: 1%;
+  width: 65%;
+}
+
 .job-container {
   margin-top: 3%;
   padding: 1%;
-  width: 60%;
+  width: 55%;
 }
 
 .sub-title {
@@ -65,6 +85,10 @@
   padding: 0px 2px 0px 10px;
 }
 
+.panel-body {
+  padding: 10px 10px 0px 10px;
+}
+
 .inline {
   display: inline-block;
 }
@@ -74,6 +98,10 @@
   color: #2199E2;
   border: solid 1px #2199E2;
   font-weight: 600;
+}
+
+.btn-add:hover, .btn-accent:focus, .btn-accent:active, .btn-accent.active, .open > .dropdown-toggle.btn-accent {
+  color: #A08F87;
 }
 
 .form-horizontal {
