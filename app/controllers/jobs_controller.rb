@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def show
     set_job
-    @milestones = set_job.sort_mil
+    # @milestones = set_job.sort_mil
 
   end
 
@@ -37,13 +37,11 @@ class JobsController < ApplicationController
 
   def edit
     set_job
-    @milestone = @job.sort_mil
     unless current_user == @job.user
       redirect_to user_path(@user)
       flash[:notice] = "You can't edit that user"
     end
   end
-
 
   def update
     set_job
@@ -82,6 +80,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:company, :title, :location, :url, :discovert, :interest_level, :notes, milestones_attributes: [:id, :title, :status])
+      params.require(:job).permit(:company, :title, :location, :url, :discovery, :interest_level, :notes, milestones_attributes: [:id, :title, :status])
     end
 end

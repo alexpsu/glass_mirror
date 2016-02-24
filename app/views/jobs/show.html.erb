@@ -92,7 +92,7 @@
         <%= link_to "", edit_milestones_path(@job), class: 'glyphicon glyphicon-pencil' %>
       </div>
       <hr class="hr">
-      <% @milestones.each do |milestone| %>
+      <% @job.milestones.each do |milestone| %>
         <%= check_box_tag "milestone", "status", milestone.status, disabled: true %>
         <% if milestone.status? %>
           <h5 class="accent-text inline"><%= milestone.title %></h5> <h5 class="prim-text inline"> - <%= time_ago_in_words(milestone.updated_at) %> ago</h5>

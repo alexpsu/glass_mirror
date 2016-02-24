@@ -5,9 +5,6 @@ class Job < ActiveRecord::Base
   accepts_nested_attributes_for :milestones, :reject_if => lambda { |b| b[:title].blank? }
 
 
-  def sort_mil
-    self.milestones.sort {|a, b| a.id <=> b.id}
-  end
 
   def find_last
     t_array = []

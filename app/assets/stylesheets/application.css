@@ -21,10 +21,6 @@ body {
   color: #455A64;
 }
 
-.sub-btn {
-  width: 100px;
-}
-
 h1, h2, h3, h4, h5, p {
   font-family: 'Raleway', sans-serif;
 }
@@ -137,6 +133,19 @@ h1, h2, h3, h4, h5, p {
 .btn-back:hover, .btn-back:focus, .btn-back:active, .btn-back.active, .open > .dropdown-toggle.btn-back {
   color: white;
   background: #4DB6AC;
+}
+
+.sub-btn {
+  width: 100px;
+  background: white;
+  color: #455A64;
+  border: solid 1px #455A64;
+  font-weight: 600;
+}
+
+.sub-btn:hover, .sub-btn:focus, .sub-btn:active, .sub-btn.active, .open > .dropdown-toggle.sub-btn {
+  color: white;
+  background: #455A64;
 }
 
 .btn-splash {
