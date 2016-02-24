@@ -12,32 +12,36 @@
     <% end %>
     <div class="form-group well">
       <div class="form-group">
-        <%= f.label :company, "Company", class: "control-label" %>
+        <%= f.label :company, "Company", class: "control-label sec-text" %>
         <%= f.text_field :company, :required => true, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :title, "Job Title", class: "control-label" %>
+        <%= f.label :title, "Job Title", class: "control-label sec-text" %>
         <%= f.text_field :title, :required => true, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :location, "Location", class: "control-label" %>
+        <%= f.label :location, "Location", class: "control-label sec-text" %>
         <%= f.text_field :location, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :url, "Link to Application", class: "control-label" %>
+        <%= f.label :url, "Link to Application", class: "control-label sec-text" %>
         <%= f.text_field :url, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :discovery, "How did you find it?", class: "control-label" %>
+        <%= f.label :discovery, "How did you find it?", class: "control-label sec-text" %>
         <%= f.text_field :discovery, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :interest_level, "How interested are you?", class: "control-label" %>
+        <%= f.label :interest_level, "How interested are you?", class: "control-label sec-text" %>
         <%= f.number_field :interest_level, placeholder: "1-5", class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :notes, "Extra Notes", class: "control-label" %>
+        <%= f.label :notes, "Extra Notes", class: "control-label sec-text" %>
         <%= f.text_area :notes, class: "form-control accent-text" %>
+      </div>
+      <div class="form-group pull-right archive">
+        <%= f.label :archive, "Archive Job?", class: "control-label inline prim-text" %>
+        <%= f.check_box :archive, class: "inline" %>
       </div>
       <div class="form-group">
         <%= f.submit "Submit", class: "btn btn-default sub-btn" %>

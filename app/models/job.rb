@@ -5,7 +5,6 @@ class Job < ActiveRecord::Base
   accepts_nested_attributes_for :milestones, :reject_if => lambda { |b| b[:title].blank? }
 
 
-
   def find_last
     t_array = []
     self.milestones.each do |mil|

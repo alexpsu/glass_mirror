@@ -10,4 +10,25 @@ class User < ActiveRecord::Base
   def is_authorized?
     current_user == @user
   end
+
+  def alive
+    alive = []
+    self.jobs.each do |job|
+      if !job.archive?
+        alive << job
+      end
+    end
+    return alive
+  end
+
+
+  def dead
+    dead = []
+    self.jobs.each do |job|
+      if job.archive?
+        dead << job
+      end
+    end
+    return dead
+  end
 end

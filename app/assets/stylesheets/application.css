@@ -25,6 +25,16 @@ h1, h2, h3, h4, h5, p {
   font-family: 'Raleway', sans-serif;
 }
 
+.archive {
+  padding: 0% 2% 1% 2%;
+  margin-right: 5%;
+  font-size: 15px;
+}
+
+#archive-btn {
+  margin-right: 10%;
+}
+
 .accent-text {
   color: #185F78;
 }
