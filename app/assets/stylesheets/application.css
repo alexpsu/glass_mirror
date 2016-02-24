@@ -5,15 +5,32 @@
 /*
  * ...
  *= require_tree .
+ *= require bootstrap-3.3.6.min.css
  *= require_self
  */
 
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js");
 
+body {
+  background-color: #F0F4F7;
+}
+
+.title {
+  font-size: 40px;
+  color: #455A64;
+}
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Raleway', sans-serif;
+}
 
 .accent-text {
   color: #1A237E;
+}
+
+.prim-text {
+  color: #B00000;
 }
 
 .sec-text {
@@ -47,19 +64,20 @@
   margin: 4px 0px 4px 0px;
 }
 
+.well {
+  background-color: #E0F2F1;
+}
+
 #mil-info {
-  background-color: #F5FAFE;
   width: 90%;
 }
 
 #job-info {
-  background-color: #F5FAFE;
   width: 99%;
   margin-bottom: 0%;
 }
 
 #contact-info {
-  background-color: #F5FAFE;
   width: 99%;
   margin-top: 4%;
 }
@@ -73,7 +91,6 @@
 .job-container {
   margin-top: 3%;
   padding: 1%;
-  width: 55%;
 }
 
 .sub-title {
@@ -95,13 +112,45 @@
 
 .btn-add {
   background: white;
-  color: #2199E2;
-  border: solid 1px #2199E2;
+  color: #455A64;
+  border: solid 1px #455A64;
   font-weight: 600;
 }
 
-.btn-add:hover, .btn-accent:focus, .btn-accent:active, .btn-accent.active, .open > .dropdown-toggle.btn-accent {
-  color: #A08F87;
+.btn-add:hover, .btn-add:focus, .btn-add:active, .btn-add.active, .open > .dropdown-toggle.btn-add {
+  color: white;
+  background: #455A64;
+}
+
+.btn-back {
+  background: white;
+  color: #4DB6AC;
+  border: solid 1px #4DB6AC;
+  font-weight: 600;
+}
+
+.btn-back:hover, .btn-back:focus, .btn-back:active, .btn-back.active, .open > .dropdown-toggle.btn-back {
+  color: white;
+  background: #4DB6AC;
+}
+
+.btn-splash {
+  background: #F0F4F7;
+  color: #4DB6AC;
+  border: solid 1px #4DB6AC;
+  font-weight: 800;
+  font-size: 18px;
+  width: 120px;
+  padding: 7%;
+}
+
+.btn-splash:hover, .btn-splash:focus, .btn-splash:active, .btn-splash.active, .open > .dropdown-toggle.btn-splash {
+  color: white;
+  background: #4DB6AC;
+}
+
+.prof-btns {
+  margin-left: 7%;
 }
 
 .form-horizontal {
@@ -114,6 +163,10 @@
   padding-right: 5%;
 }
 
-.splash-btn {
- display: inline-block;
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    background-color: #CFD8DC;
 }

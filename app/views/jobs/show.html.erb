@@ -7,7 +7,7 @@
 
 <div class="container show-container">
 
-  <div class="col-md-6 container center-block">
+  <div class="col-md-6 center-block row">
 
     <div class="col-s-6 well" id="job-info">
       <h3 class="inline sub-title">Job Info</h3>
@@ -64,7 +64,7 @@
                 <br>
               <% end %>
               <% if contact.web? %>
-                <h5 class="sec-text inline">Website - </h5><h5><a class="accent-text" href=<%= contact.web %>><%= contact.web %></a></h5>
+                <h5 class="sec-text inline">Website - </h5><h5 class="inline"> <a class="accent-text" href=<%= contact.web %>> <%= contact.web %></a></h5>
                 <br>
               <% end %>
               <% if contact.notes? %>
@@ -83,7 +83,7 @@
 
   </div>
 
-  <div class="col-md-6 container center-block">
+  <div class="col-md-6 row center-block">
 
     <div class="col-lg-4 pull-right well" id="mil-info">
       <h3 class="inline sub-title">Milestones</h3>
@@ -94,7 +94,11 @@
       <hr class="hr">
       <% @milestones.each do |milestone| %>
         <%= check_box_tag "milestone", "status", milestone.status, disabled: true %>
-        <h5 class="accent-text inline"><%= milestone.title %></h5>
+        <% if milestone.status? %>
+          <h5 class="accent-text inline"><%= milestone.title %></h5> <h5 class="prim-text inline"> - <%= time_ago_in_words(milestone.updated_at) %> ago</h5>
+        <% else %>
+          <h5 class="accent-text inline"><%= milestone.title %></h5>
+        <% end %>
         <div class="pull-right icon-job">
           <%= link_to "", delete_milestone_path(milestone), method: :delete, class: 'glyphicon glyphicon-remove icon-job pull-right' %>
         </div>

@@ -1,10 +1,6 @@
-<div class="btn-group">
-  <div class="splash-btn btn-del">
-    <%= button_to "edit profile", edit_user_path(@user.id), method: :get, class: 'btn btn-xs btn-light center-block' %>
-  </div>
-  <div class="splash-btn btn-del">
-    <%= button_to "remove profile", @user, method: :delete, class: 'btn btn-xs btn-light center-block'  %>
-  </div>
+<div class="inline prof-btns">
+  <%= link_to 'Edit Profile', edit_user_path(@user.id), method: :get, class:"btn btn-xs btn-back" %>
+  <%= link_to 'Remove Profile', @user, method: :delete, class:"btn btn-xs btn-back" %>
 </div>
 <div class="container">
   <div class="text-center">
@@ -23,15 +19,20 @@
   <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-add center-block'  %>
 </div>
 
-<div class="job-container center-block">
-  <table class="table table-hover">
+<div class="job-container col-md-8 col-md-offset-2">
+  <table class="table table-hover well">
     <tbody>
-      <% @user.jobs.each do |job| %>
+      <% @jobs.each do |job| %>
         <tr>
           <td>
-            <h4 class="accent-text splash-btn"><%=link_to "#{job.title}", job_path(job.id), class: "accent-text" %></h4> <h5 class="sec-text splash-btn">at</h5>
-            <h4 class="accent-text splash-btn"><%= job.company %>.</h4> <h5 class="sec-text splash-btn">Last Milestone</h5>
-            <h5 class="accent-text splash-btn"><%= job.find_last.title %> <%= time_ago_in_words(job.find_last.updated_at) %> ago</h5>
+            <h4 class="accent-text inline"><%= link_to "#{job.title}", job_path(job.id), class: "accent-text" %></h4>
+            <h5 class="sec-text inline">at</h5>  <h4 class="accent-text inline"><%= job.company %>.</h4>
+            <% if job.truth_length > 0 %>
+              <h5 class="sec-text inline text-center">Last Milestone</h5>
+              <h4 class="accent-text inline text-center"><%= job.find_last.title %> <%= time_ago_in_words(job.find_last.updated_at) %> ago</h4>
+            <% else %>
+              <h5 class="sec-text inline text-center">No Milestones</h5>
+            <% end %>
             <div class="pull-right icon">
               <%= link_to "", edit_job_path(job.id), class: 'glyphicon glyphicon-pencil' %>
               <%= link_to "", job, method: :delete, class: 'glyphicon glyphicon-remove' %>

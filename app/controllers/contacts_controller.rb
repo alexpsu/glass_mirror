@@ -8,14 +8,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    #check if you need this because it might use the id when it makes a new one
-    @job = Job.find(contact_params[:job_id])
-    #you need it for the redirect though or could do contact.job
-    @job.contacts << @contact
-
     if @contact.save
       flash[:notice] = "Successfully created contact"
-      redirect_to job_path(@job)
+      redirect_to job_path(@contact.job)
     else
       flash[:error] = @contact.errors.full_messages.join(", ")
       redirect_to new_contact_path

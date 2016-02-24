@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     set_user
+    @jobs = set_user.jobs.order(updated_at: :desc)
   end
 
   def new

@@ -1,4 +1,4 @@
-  <div class="jumbotron">
+  <div class="jumbotron title">
     <h1 class="text-center">Welcome to Glass Mirror</h1>
   </div>
   <div class="container text-center">
@@ -6,7 +6,7 @@
   </div>
   <br>
   <div class="text-center">
-    <div class="splash-btn"><%= button_to "Sign Up", new_user_path, method: :get, class: "btn btn-md btn-default" %></div>
-    <h4 class="splash-btn" >or</h4>
-    <div class="splash-btn"><%= button_to "Log In", new_session_path, method: :get, class: "btn btn-md btn-default" %></div>
+    <div class="inline"><%= button_to "Sign Up", new_user_path, method: :get, class: "btn btn-lg btn-splash" %></div>
+    <h4 class="inline" >or</h4>
+    <div class="inline"><%= button_to "Log In", new_session_path, method: :get, class: "btn btn-lg btn-splash" %></div>
   </div>

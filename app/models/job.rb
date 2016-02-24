@@ -24,6 +24,15 @@ class Job < ActiveRecord::Base
     end
   end
 
-end
+  def truth_length
+    truth_array = []
+    self.milestones.each do |mil|
+      if mil.status?
+        truth_array << mil
+      end
+    end
+    return truth_array.length
+  end
 
-# [t_array.length - 1].title + " on " + time_ago_in_words(t_array[t_array.length - 1].updated_at)
+
+end
