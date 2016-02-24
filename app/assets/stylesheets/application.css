@@ -21,6 +21,10 @@ body {
   color: #455A64;
 }
 
+.sub-btn {
+  width: 100px;
+}
+
 h1, h2, h3, h4, h5, p {
   font-family: 'Raleway', sans-serif;
 }
@@ -66,6 +70,7 @@ h1, h2, h3, h4, h5, p {
 
 .well {
   background-color: #E0F2F1;
+  padding: 2% 7% 2% 7%;
 }
 
 #mil-info {
@@ -169,4 +174,12 @@ h1, h2, h3, h4, h5, p {
     margin-bottom: 10px;
     border: 1px solid transparent;
     background-color: #CFD8DC;
+}
+
+.navbar .nav > li > a {
+  color: #455A64;
+}
+
+#nav-title {
+  color: #455A64;
 }
