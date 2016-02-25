@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :logged_out?, only: [:new, :create]
 
   def index
-    @users = User.all
+    redirect_to @user
   end
 
   def show
