@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "/about", to: "splash#show", as: "about"
 
   #Routes for CRUD for Users
-  get "/users", to: "users#index", as: "users"
   get "/signup", to: "users#new", as: "new_user"
   post "/users", to: "users#create", as: "create_user"
   get "/users/:id", to: "users#show", as: "user"
