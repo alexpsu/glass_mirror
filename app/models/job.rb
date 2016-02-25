@@ -4,6 +4,8 @@ class Job < ActiveRecord::Base
   has_many :contacts, :dependent => :delete_all
   accepts_nested_attributes_for :milestones, :reject_if => lambda { |b| b[:title].blank? }
 
+  default_scope {order('updated_at')}
+
 
   def find_last
     t_array = []
@@ -29,6 +31,5 @@ class Job < ActiveRecord::Base
     end
     return truth_array.length
   end
-
 
 end
