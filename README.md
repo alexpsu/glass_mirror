@@ -4,12 +4,12 @@ Glass Mirror is a web application built to help a user organize their job search
 Here is the link to the website on [Heroku](https://glass-mirror.herokuapp.com/).
 
 # Contents
-* **[Getting Started](#getting-started):**
-* **[Screenshot](#screenshot):**
-* **[Wireframes](#wireframes):**
-* **[Models](#models)**
-* **[Technologies](#technologies):**
-* **[Future Features](#future-features):** What are we hoping to add?
+* **[Getting Started](#getting-started)
+* **[Screenshot](#screenshot)
+* **[Wireframes](#wireframes)
+* **[Models](#models)
+* **[Technologies](#technologies)
+* **[Future Features](#future-features)
 
 # Getting Started
 1. Fork this repo and clone it onto your local machine.
