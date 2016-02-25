@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   has_many :jobs, :dependent => :delete_all
   has_secure_password
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates_uniqueness_of :email
+  validates :email, format: {with: /@/}
+
   def self.confirm(params)
       @user = User.find_by({email: params[:email]})
       @user.try(:authenticate, params[:password])
