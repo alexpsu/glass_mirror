@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
 gem 'hirb'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -38,6 +39,10 @@ gem 'hirb'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development do
