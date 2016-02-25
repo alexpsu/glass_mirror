@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
         alive << job
       end
     end
-    return alive
+    return alive.sort! { |a,b| b.updated_at <=> a.updated_at}
   end
 
 
@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
         dead << job
       end
     end
-    return dead
+    return dead.sort! { |a,b| b.updated_at <=> a.updated_at}
   end
 end

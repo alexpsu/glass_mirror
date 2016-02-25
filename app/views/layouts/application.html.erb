@@ -2,7 +2,7 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  
+
   <title>GlassMirror</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -22,7 +22,6 @@
         </button>
         <%= link_to "Glass Mirror", user_path(current_user), class: "navbar-brand", id: "nav-title" %>
       </div><!-- /.navbar-collapse -->
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -30,17 +29,16 @@
         </ul>
     </div><!-- /.container-fluid -->
     </nav>
-  <% end %>
-  <div>
-    <% flash.each do |name, msg| %>
-      <div id="flash_messages">
-        <div class="alert alert-info" role="alert">
-          <%= msg %>
+    <div>
+      <% flash.each do |name, msg| %>
+        <div id="flash_messages">
+          <div class="alert alert-info" role="alert">
+            <%= msg %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
+      <% end %>
+    </div>
+  <% end %>
 
 <%= yield %>
 

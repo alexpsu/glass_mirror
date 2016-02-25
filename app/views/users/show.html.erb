@@ -13,15 +13,15 @@
       </div>
         <h3>To get started click the button below!</h3>
     <% else %>
-      <h1 class="title">Hello <%= @user.first_name %></h1>
+      <h1 class="title text-center">Hello <%= @user.first_name %></h1>
     <% end %>
   </div>
 </div>
-<br />
+
 <div class="button text-center">
   <%= button_to "Add Job", new_job_path, method: :get, class: 'btn btn-add center-block'  %>
 </div>
-
+<hr />
 <div class="job-container col-md-8 col-md-offset-2">
   <table class="table table-hover well">
     <tbody>

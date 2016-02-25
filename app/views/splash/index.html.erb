@@ -1,12 +1,16 @@
-  <div class="jumbotron title">
-    <h1 class="text-center">Welcome to Glass Mirror</h1>
+<div class="splash-back">
+  <div class="center-block splash-box">
+    <div class="well center-block" id="splash-container">
+      <h1 class="text-center title">Welcome to Glass Mirror</h1>
+      <div class="row text-center">
+        <h3>Please</h3>
+      </div>
+      <br>
+      <div class="text-center">
+        <div class="inline"><%= button_to "Sign Up", new_user_path, method: :get, class: "btn btn-lg btn-splash" %></div>
+        <h4 class="inline" >or</h4>
+        <div class="inline"><%= button_to "Log In", new_session_path, method: :get, class: "btn btn-lg btn-splash" %></div>
+      </div>
+    </div>
   </div>
-  <div class="container text-center">
-    <h3>Please</h3>
-  </div>
-  <br>
-  <div class="text-center">
-    <div class="inline"><%= button_to "Sign Up", new_user_path, method: :get, class: "btn btn-lg btn-splash" %></div>
-    <h4 class="inline" >or</h4>
-    <div class="inline"><%= button_to "Log In", new_session_path, method: :get, class: "btn btn-lg btn-splash" %></div>
-  </div>
+</div>

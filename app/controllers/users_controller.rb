@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     set_user
-    @jobs = set_user.alive.sort! { |a,b| b.updated_at <=> a.updated_at}
+    @jobs = set_user.alive
   end
 
   def archive

@@ -6,29 +6,35 @@
     <h1 class="title"><%= @user.first_name %>'s Archived Jobs</h1>
   </div>
 </div>
-<br />
+<hr />
 
-<div class="job-container col-md-8 col-md-offset-2">
-  <table class="table table-hover well">
-    <tbody>
-      <% @jobs.each do |job| %>
-        <tr>
-          <td>
-            <h4 class="accent-text inline"><%= link_to "#{job.title}", job_path(job.id), class: "accent-text" %></h4>
-            <h5 class="sec-text inline">at</h5>  <h4 class="accent-text inline"><%= job.company %>.</h4>
-            <% if job.truth_length > 0 %>
-              <h5 class="sec-text inline text-center">Last Milestone</h5>
-              <h4 class="accent-text inline text-center"><%= job.find_last.title %> <%= time_ago_in_words(job.find_last.updated_at) %> ago</h4>
-            <% else %>
-              <h5 class="sec-text inline text-center">No Milestones</h5>
-            <% end %>
-            <div class="pull-right icon">
-              <%= link_to "", edit_job_path(job.id), class: 'glyphicon glyphicon-pencil' %>
-              <%= link_to "", job, method: :delete, class: 'glyphicon glyphicon-remove' %>
-            </div>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<% if @jobs.length > 0 %>
+  <div class="job-container col-md-8 col-md-offset-2">
+    <table class="table table-hover well">
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td>
+              <h4 class="accent-text inline"><%= link_to "#{job.title}", job_path(job.id), class: "accent-text" %></h4>
+              <h5 class="sec-text inline">at</h5>  <h4 class="accent-text inline"><%= job.company %>.</h4>
+              <% if job.truth_length > 0 %>
+                <h5 class="sec-text inline text-center">Last Milestone</h5>
+                <h4 class="accent-text inline text-center"><%= job.find_last.title %> <%= time_ago_in_words(job.find_last.updated_at) %> ago</h4>
+              <% else %>
+                <h5 class="sec-text inline text-center">No Milestones</h5>
+              <% end %>
+              <div class="pull-right icon">
+                <%= link_to "", edit_job_path(job.id), class: 'glyphicon glyphicon-pencil' %>
+                <%= link_to "", job, method: :delete, class: 'glyphicon glyphicon-remove' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="text-center">
+    <h2>You have no archived jobs</h2>
+  </div>
+<% end %>
