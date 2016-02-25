@@ -15,3 +15,9 @@
 //= require bootstrap-3.3.6.min
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:change", function(){
+    setTimeout(function(){
+      $("#flash_messages").fadeOut();
+    },1500);
+});
