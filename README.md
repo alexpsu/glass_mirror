@@ -1,7 +1,6 @@
 # Glass Mirror
 
-Glass Mirror is a web application built to help a user organize their job search information. It allows a user to store job and contact information, and also has a system to track milestones for each job. \
-Here is the link to the website on [Heroku](https://glass-mirror.herokuapp.com/).
+Glass Mirror is a web application built to help a user organize their job search information. It allows a user to store job and contact information, and also has a system to track milestones for each job. I made this website using Ruby on rails, and I made it for anyone that wants to easily organize and document their job searching material. Here is the link to the website on [Heroku!](https://glass-mirror.herokuapp.com/).
 
 # Contents
 * [Getting Started](#getting-started)
