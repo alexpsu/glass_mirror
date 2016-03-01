@@ -24,7 +24,7 @@
         <%= f.text_field :location, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
-        <%= f.label :url, "Link to Application", class: "control-label sec-text" %>
+        <%= f.label :url, "URL Link to Application", class: "control-label sec-text" %>
         <%= f.text_field :url, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
@@ -33,7 +33,7 @@
       </div>
       <div class="form-group">
         <%= f.label :interest_level, "How interested are you?", class: "control-label sec-text" %>
-        <%= f.number_field :interest_level, placeholder: "1-5", class: "form-control accent-text" %>
+        <%= f.number_field :interest_level, placeholder: "1-5", min: 1, max: 5, class: "form-control accent-text" %>
       </div>
       <div class="form-group">
         <%= f.label :notes, "Extra Notes", class: "control-label sec-text" %>
