@@ -3,7 +3,6 @@ class JobsController < ApplicationController
 
   def show
     set_job
-    # @milestones = set_job.sort_mil
 
   end
 
